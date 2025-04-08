@@ -1,0 +1,110 @@
+<!--top-->
+<section class="topSection">
+  <div
+    class="d-flex flex-column justify-content-around align-items-center head"
+  >
+    <h2 class="">Recipes</h2>
+    <p class="col-7 text-center topP">
+      We’ve organized these recipes every way we could think of so you don't
+      have to! Dietary restrictions, weeknight dinners, meal prep recipes, some
+      of our most tried-and-true… no matter how you browse, we’re sure you’ll
+      find just what you were looking for.
+    </p>
+    <div class="search col-9 ps-lg-5 ps-3">
+      <a class="pe-3"><i class="fa-solid fa-magnifying-glass icon"></i></a>
+      <input type="text" placeholder="Search by keyword" class="col-8" />
+    </div>
+  </div>
+</section>
+
+<!--top rated-->
+<div class="col-12 d-flex justify-content-center mb-3">
+  <div
+    class="col-9 d-flex justify-content-center flex-column align-items-center"
+  >
+    <h3 class="title">
+      <i class="bi bi-trophy"></i>
+      TOP RATED RECIPES
+    </h3>
+    <p class="bottomP col-7 text-center d-none d-lg-block d-md-block">
+      Out of all the many recipes on Pinch of Yum, these are our shining stars -
+      the recipes we come back to again and again (and again).
+    </p>
+  </div>
+</div>
+
+<!--Top rated recipes-->
+<div class="col-12 d-flex justify-content-center">
+  <div class="col-9 d-flex justify-content-around align-items-center flex-wrap">
+    <div
+      class="col-lg-4 col-12 col-md-4 d-flex justify-content-between mb-5"
+      *ngFor="let recipe of topRated"
+    >
+      <div class="col-lg-5 col-md-4 col-6 imgH">
+        <a href="">
+          <img
+            [src]="recipe.ImageURl"
+            class="img-fluid w-100 h-100 object-fit-cover"
+          />
+        </a>
+      </div>
+
+      <div
+        class="col-lg-6 col-md-7 col-5 imgH d-flex flex-column justify-content-start align-items-start"
+      >
+        <a href=""
+          ><h5>{{ recipe.Title }}</h5></a
+        >
+        <app-star-rating [rating]="recipe.Ratings.score"></app-star-rating>
+        <div class="avg">{{ recipe.Ratings.score }} Average</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--button view all recipes-->
+<div class="d-flex justify-content-center mb-4 CviewBTN">
+  <button class="col-lg-4 col-md-6 col-10 viewBTN">+ VIEW ALL RECIPES</button>
+</div>
+
+<div
+  class="col-12 justify-content-center align-items-center d-flex mt-5 flex-column"
+>
+  <div class="col-9 d-flex justify-content-start flex-column mb-3">
+    <h3 class="col-12 pb-2 catTitle">POPULAR CATEGORIES</h3>
+    <div class="col-12 d-flex justify-content-between flex-wrap">
+      <ul
+        *ngFor="let item of Popularcategories"
+        class="col-lg-4 col-md-4 col-6"
+      >
+        <a href="" class="cat"
+          ><li class="col-12" [value]="item.Id">{{ item.Name }}</li></a
+        >
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-9 d-flex justify-content-start flex-column mb-3">
+    <h3 class="col-12 pb-2 catTitle">MEALTYPE CATEGORIES</h3>
+    <div class="col-12 d-flex justify-content-between flex-wrap">
+      <ul
+        *ngFor="let item of MealTypecategories"
+        class="col-lg-4 col-md-4 col-6"
+      >
+        <a href="" class="cat"
+          ><li class="col-12" [value]="item.Id">{{ item.Name }}</li></a
+        >
+      </ul>
+    </div>
+  </div>
+  <div class="col-9 d-flex justify-content-start flex-column mb-3">
+    <h3 class="col-12 pb-2 catTitle">COURSE CATEGORIES</h3>
+    <div class="col-12 d-flex justify-content-between flex-wrap">
+      <ul *ngFor="let item of Coursecategories" class="col-lg-4 col-md-4 col-6">
+        <a href="" class="cat"
+          ><li class="col-12" [value]="item.Id">{{ item.Name }}</li></a
+        >
+      </ul>
+    </div>
+  </div>
+</div>

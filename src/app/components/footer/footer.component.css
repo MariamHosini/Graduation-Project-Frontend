@@ -1,0 +1,79 @@
+footer {
+  height: 100vh;
+  background-color: #e8d8c4 !important;
+  margin: 0px;
+  padding: 0px;
+  border-top: #6d2932 solid 1px;
+}
+a {
+  text-decoration: none;
+}
+.color {
+  color: #6d2932;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
+}
+.text {
+  color: rgb(66, 65, 65) !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
+.text:hover {
+  color: #6d2932 !important;
+}
+
+.form {
+  background-color: #6d2932;
+  height: 20vh;
+  border-radius: 15px;
+}
+.formElement {
+  color: #e8d8c4;
+}
+input {
+  padding: 3%;
+  height: 80%;
+}
+input:focus {
+  outline: none;
+  border: none;
+}
+button {
+  background-color: #e8d8c4 !important;
+  color: #6d2932;
+  height: 80%;
+}
+button:hover {
+  background-color: #e8d8c4 !important;
+}
+h5 {
+  color: #e8d8c4;
+  font-family: "Dancing Script", cursive;
+}
+img {
+  height: 20vh;
+}
+.icon {
+  color: #6d2932;
+}
+.icon:hover {
+  transition: color 0.3s ease, transform 0.3s ease;
+  color: #ac3746;
+}
+
+h4 {
+  color: #6d2932;
+  font-family: "Dancing Script", cursive;
+}
+@media (max-width: 600px) {
+  .color {
+    color: #6d2932;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 14px;
+  }
+  .text {
+    color: rgb(66, 65, 65) !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+  }
+}

@@ -1,0 +1,41 @@
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 24px;
+  color: #f5a623;
+}
+
+.star-rating i {
+  width: 1em;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.full::before {
+  content: "★";
+}
+
+.half::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  width: 0.5em;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Empty star */
+.empty::before {
+  content: "☆";
+  color: #ccc;
+}
+
+.review-text {
+  font-size: 14px;
+  color: #333;
+  margin-left: 8px;
+}

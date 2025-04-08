@@ -1,0 +1,5 @@
+<div class="star-rating">
+  <ng-container *ngFor="let star of stars">
+    <div><i [ngClass]="getStarClass(star)"></i></div>
+  </ng-container>
+</div>

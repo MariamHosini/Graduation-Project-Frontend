@@ -1,0 +1,213 @@
+.head {
+  height: 55vh;
+  background-color: #6d2932;
+}
+h2 {
+  color: #e8d8c4;
+  font-size: 50px !important;
+  font-weight: 800;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.topP {
+  color: #c7b7a3;
+  font-size: 20px !important;
+  font-weight: 500;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.search {
+  height: 10vh;
+  margin-bottom: -10vh;
+  background-color: #f1eeeb;
+  border: 1px #c7b7a3 solid;
+}
+input {
+  background-color: #f1eeeb;
+  height: 100%;
+  width: 60%;
+  outline: none;
+  border: none;
+}
+.icon {
+  color: #6d2932;
+}
+input::placeholder {
+  font-size: 20px;
+}
+.topSection {
+  margin-bottom: 8%;
+}
+i {
+  color: rgb(235, 199, 0);
+}
+.title {
+  font-weight: 700;
+  color: #6d2932;
+}
+.bottomP {
+  font-weight: 600;
+  color: rgb(71, 70, 70);
+  font-size: 16px;
+}
+li {
+  font-size: 18px;
+  color: #696764;
+  font-weight: 700;
+}
+.cat :hover {
+  transition: color 0.3s ease, transform 0.3s ease;
+  color: #ac3746;
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  li {
+    font-size: 18px;
+    color: #696764;
+    font-weight: 700;
+  }
+  h2 {
+    color: #e8d8c4;
+    font-size: 40px !important;
+    font-weight: 700;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  .topP {
+    color: #c7b7a3;
+    font-size: 16px !important;
+    font-weight: 500;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  .search {
+    height: 10vh;
+    margin-bottom: -9vh;
+    background-color: #f1eeeb;
+  }
+  h5 {
+    font-size: 17px;
+    font-weight: 900;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  .catTitle {
+    color: #6d2932;
+    font-size: 25px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom: #e8d8c4 1px solid;
+  }
+}
+@media (min-width: 601px) and (max-width: 768px) {
+  .catTitle {
+    color: #6d2932;
+    font-size: 25px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom: #e8d8c4 1px solid;
+  }
+
+  h2 {
+    color: #e8d8c4;
+    font-size: 33px !important;
+    font-weight: 700;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  .topP {
+    color: #c7b7a3;
+    font-size: 14px !important;
+    font-weight: 500;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  .search {
+    height: 9vh;
+    margin-bottom: -8vh;
+    background-color: #f1eeeb;
+  }
+  h5 {
+    font-size: 17px;
+    font-weight: 700;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  li {
+    font-size: 17px;
+    color: #696764;
+    font-weight: 700;
+  }
+}
+@media (max-width: 600px) {
+  .catTitle {
+    color: #6d2932;
+    font-size: 18px !important;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom: #e8d8c4 1px solid;
+  }
+
+  li {
+    font-weight: 700;
+    font-size: 12px;
+    color: #696764;
+    font-weight: 700;
+  }
+  h2 {
+    color: #e8d8c4;
+    font-size: 28px !important;
+    font-weight: 700;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  .topP {
+    color: #c7b7a3;
+    font-size: 12px !important;
+    font-weight: 500;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  .search {
+    height: 6vh;
+    margin-bottom: -6vh;
+    background-color: #f1eeeb;
+  }
+  input::placeholder {
+    font-size: 12px;
+  }
+  h3 {
+    font-weight: 600;
+    color: #6d2932;
+    font-size: 21px;
+  }
+  h5 {
+    font-size: 12px;
+    font-weight: 700;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+}
+.imgH {
+  height: 17vh;
+}
+h5 {
+  font-size: 17px;
+  font-weight: 900;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.avg {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgb(83, 83, 83);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.CviewBTN {
+  height: 6vh;
+}
+.viewBTN {
+  background-color: #6d2932;
+  color: #e8d8c4;
+  outline: none;
+  border: none;
+}
+.catTitle {
+  color: #6d2932;
+  font-size: 25px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-bottom: #e8d8c4 1px solid;
+}
+
+ul li::marker {
+  color: #6d2932;
+  font-size: 23px;
+}
