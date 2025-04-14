@@ -6,13 +6,13 @@ h2 {
   color: #e8d8c4;
   font-size: 50px !important;
   font-weight: 800;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .topP {
   color: #c7b7a3;
   font-size: 20px !important;
   font-weight: 500;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .search {
   height: 10vh;
@@ -40,6 +40,7 @@ i {
   color: rgb(235, 199, 0);
 }
 .title {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 700;
   color: #6d2932;
 }
@@ -67,13 +68,13 @@ li {
     color: #e8d8c4;
     font-size: 40px !important;
     font-weight: 700;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
   .topP {
     color: #c7b7a3;
     font-size: 16px !important;
     font-weight: 500;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
   .search {
     height: 10vh;
@@ -83,7 +84,7 @@ li {
   h5 {
     font-size: 17px;
     font-weight: 900;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
   .catTitle {
     color: #6d2932;
@@ -104,13 +105,13 @@ li {
     color: #e8d8c4;
     font-size: 33px !important;
     font-weight: 700;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
   .topP {
     color: #c7b7a3;
     font-size: 14px !important;
     font-weight: 500;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
   .search {
     height: 9vh;
@@ -120,7 +121,7 @@ li {
   h5 {
     font-size: 17px;
     font-weight: 700;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
   li {
     font-size: 17px;
@@ -146,13 +147,13 @@ li {
     color: #e8d8c4;
     font-size: 28px !important;
     font-weight: 700;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
   .topP {
     color: #c7b7a3;
     font-size: 12px !important;
     font-weight: 500;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
   .search {
     height: 6vh;
@@ -170,7 +171,7 @@ li {
   h5 {
     font-size: 12px;
     font-weight: 700;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
 }
 .imgH {
@@ -178,8 +179,8 @@ li {
 }
 h5 {
   font-size: 17px;
-  font-weight: 900;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .avg {
   font-size: 13px;

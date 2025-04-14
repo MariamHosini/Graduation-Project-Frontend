@@ -1,0 +1,48 @@
+<div
+  class="col-12 justify-content-center d-flex flex-column mt-4 mb-4 align-items-center"
+>
+  <div class="d-flex justify-content-center col-10 mb-4">
+    <h2>
+      <i class="bi bi-journal-text d-inline"></i>
+      <p class="d-inline ms-2">ALL RECIPES</p>
+    </h2>
+  </div>
+  <div class="d-flex justify-content-center col-md-10 col-11 col-lg-10">
+    <div class="col-12 d-flex justify-content-center flex-wrap">
+      <!--image-->
+      <div
+        *ngFor="let recipe of topRated"
+        class="col-lg-4 col-md-6 col-6 d-flex justify-content-center mb-3"
+      >
+        <div class="col-10 d-flex flex-column justify-content-between">
+          <div class="imgH">
+            <a (click)="getRecipe(recipe.RecipeID)" style="cursor: pointer">
+              <img
+                [src]="recipe.ImageURl"
+                class="img-fluid w-100 h-100 object-fit-cover"
+              />
+            </a>
+          </div>
+          <div>
+            <a (click)="getRecipe(recipe.RecipeID)" style="cursor: pointer"
+              ><h5 class="text-center col-12 mt-3">{{ recipe.Title }}</h5></a
+            >
+          </div>
+
+          <div
+            class="d-flex justify-content-center align-items-center flex-column flex-lg-row flex-md-row"
+          >
+            <div
+              class="col-12 col-lg-6 col-md-6 d-flex justify-content-center x"
+            >
+              <app-star-rating
+                [rating]="recipe.Ratings.score"
+              ></app-star-rating>
+            </div>
+            <div class="avg">{{ recipe.Ratings.score }} Average</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

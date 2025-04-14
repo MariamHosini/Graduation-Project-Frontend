@@ -1,0 +1,212 @@
+h2 {
+  font-family: "Dancing Script", cursive;
+  color: #561c24;
+  font-size: 40px;
+  font-weight: 600;
+}
+.box {
+  border-bottom: #c7b7a3 1px solid;
+}
+p {
+  color: rgb(77, 76, 76);
+  font-size: 22px;
+
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.imgheight {
+  height: 80vh;
+}
+i {
+  cursor: pointer;
+  font-size: 50px;
+  color: #561c24;
+}
+.x {
+  outline: #561c24;
+  border: #561c24 3px solid;
+  color: #561c24;
+  font-weight: 700;
+  background: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  font-family: "Dancing Script", cursive;
+  font-size: 30px;
+}
+.x:hover {
+  border: #561c24 1px solid;
+  color: #e8d8c4;
+  font-weight: 700;
+  background-color: #561c24;
+}
+h3 {
+  color: #561c24;
+  font-weight: 600;
+  font-family: "Dancing Script", cursive;
+  font-size: 35px;
+}
+h4 {
+  color: #561c24;
+  font-weight: 600;
+  font-family: "Dancing Script", cursive;
+  font-size: 30px;
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  h4 {
+    color: #561c24;
+    font-weight: 600;
+    font-family: "Dancing Script", cursive;
+    font-size: 30px;
+  }
+  h3 {
+    color: #561c24;
+    font-family: "Dancing Script", cursive;
+    font-size: 35px;
+  }
+  .x {
+    font-size: 30px;
+  }
+  i {
+    cursor: pointer;
+    font-size: 50px;
+    color: #561c24;
+  }
+  h2 {
+    font-family: "Dancing Script", cursive;
+    color: #561c24;
+    font-size: 40px;
+    font-weight: 600;
+  }
+  p {
+    font-size: 23px;
+    font-weight: 600;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .imgheight {
+    height: 80vh;
+  }
+}
+@media (min-width: 601px) and (max-width: 768px) {
+  h4 {
+    color: #561c24;
+    font-weight: 600;
+    font-family: "Dancing Script", cursive;
+    font-size: 20px;
+  }
+  h3 {
+    color: #561c24;
+    font-family: "Dancing Script", cursive;
+    font-size: 25px;
+  }
+  .x {
+    font-size: 25px;
+  }
+  i {
+    cursor: pointer;
+    font-size: 40px;
+    color: #561c24;
+  }
+  h2 {
+    font-family: "Dancing Script", cursive;
+    color: #561c24;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  p {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .imgheight {
+    height: 70vh;
+  }
+}
+@media (max-width: 600px) {
+  h4 {
+    color: #561c24;
+    font-weight: 600;
+    font-family: "Dancing Script", cursive;
+    font-size: 18px;
+  }
+  h3 {
+    color: #561c24;
+    font-family: "Dancing Script", cursive;
+    font-size: 20px;
+  }
+  .x {
+    font-size: 20px;
+  }
+  i {
+    cursor: pointer;
+    font-size: 30px;
+    color: #561c24;
+  }
+  h2 {
+    font-family: "Dancing Script", cursive;
+    color: #561c24;
+    font-size: 23px;
+    font-weight: 600;
+  }
+  p {
+    font-size: 15px;
+    font-weight: 600;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .imgheight {
+    height: 70vh;
+  }
+}
+
+.ingredients-list {
+  list-style: none;
+  padding: 0;
+}
+
+.ingredients-list li {
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.ingredients-list input[type="checkbox"] {
+  margin-right: 8px;
+  transform: scale(1.2);
+}
+
+.ingredients-list input[type="checkbox"]:checked + span {
+  text-decoration: line-through;
+  color: #561c24;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+  color: #777;
+}
+.ingredients-list input[type="checkbox"] {
+  appearance: none; /* Remove default checkbox */
+  width: 18px;
+  height: 18px;
+  border: 2px solid #561c24;
+  border-radius: 4px;
+  margin-right: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ingredients-list input[type="checkbox"]:checked {
+  background-color: #561c24; /* your custom color */
+  border-color: #561c24;
+}
+
+.ingredients-list input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: #e8d8c4;
+  font-size: 14px;
+  position: absolute;
+  top: -3px;
+  left: 2px;
+}

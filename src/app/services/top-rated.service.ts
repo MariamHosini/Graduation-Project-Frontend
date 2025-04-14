@@ -28,17 +28,31 @@ export class TopRatedService {
       CategoryNames: ['Vegan', 'Street Food'],
       RecipeIngredients: [
         {
-          Quantity: '1',
+          Quantity: 1,
           Unit: 'cup',
-          ingredientNames: [
-            {
-              Name: 'Lentils',
-              CaloriesPer100g: 116,
-              Protein: 9.02,
-              Carbs: 20.13,
-              Fats: 0.38,
-            },
-          ],
+
+          IngredientName: 'Lentils',
+          CaloriesPer100g: 116,
+          Protein: 9.02,
+          IngredientID: 1,
+        },
+        {
+          Quantity: 1,
+          Unit: 'cup',
+
+          IngredientName: 'Lentils',
+          CaloriesPer100g: 116,
+          Protein: 9.02,
+          IngredientID: 1,
+        },
+        {
+          Quantity: 1,
+          Unit: 'cup',
+
+          IngredientName: 'Lentils',
+          CaloriesPer100g: 116,
+          Protein: 9.02,
+          IngredientID: 1,
         },
       ],
       Ratings: { score: 4.8 },

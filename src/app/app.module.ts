@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -10,7 +10,11 @@ import { AboutComponent } from './components/about/about.component';
 import { ReceipeComponent } from './components/receipe/receipe.component';
 import { StartHereComponent } from './components/start-here/start-here.component';
 import { StarRatingComponent } from './components/star-rating/star-rating.component';
-
+import { RecipesShowComponent } from './components/recipes-show/recipes-show.component';
+import { OneRecipeShowComponent } from './components/one-recipe-show/one-recipe-show.component';
+import { LogInComponent } from './components/log-in/log-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,13 +24,15 @@ import { StarRatingComponent } from './components/star-rating/star-rating.compon
     AboutComponent,
     ReceipeComponent,
     StartHereComponent,
-    StarRatingComponent
+    StarRatingComponent,
+    RecipesShowComponent,
+    OneRecipeShowComponent,
+    LogInComponent,
+    SignUpComponent,
+    UserProfileComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

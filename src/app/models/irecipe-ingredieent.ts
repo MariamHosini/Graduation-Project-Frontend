@@ -1,7 +1,10 @@
 import { IIngredient } from './iingredient';
 
 export interface IRecipeIngredieent {
-  Quantity: string;
+  Quantity: number;
   Unit: string;
-  ingredientNames: IIngredient[];
+  IngredientID: number;
+  IngredientName: string;
+  CaloriesPer100g: number;
+  Protein: number;
 }

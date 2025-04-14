@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg nav col-12 p-0 bo">
+<nav class="navbar navbar-expand-lg nav col-12 p-0 bo z-1">
   <div
     class="container-fluid d-flex justify-content-lg-around align-items-center justify-content-around ms-0 me-0"
   >
@@ -17,6 +17,7 @@
       aria-controls="navbarNav"
       aria-expanded="false"
       aria-label="Toggle navigation"
+      #navToggeler
     >
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -29,21 +30,49 @@
         <div class="col-12 col-lg-12 d-flex justify-content-lg-end">
           <ul class="navbar-nav">
             <li class="nav-item _bo">
-              <a class="nav-link navItem" routerLink="/home">HOME</a>
+              <a
+                class="nav-link navItem"
+                routerLink="/home"
+                data-bs-toggle="collapse"
+                data-bs-target=".navbar-collapse.show"
+                >HOME</a
+              >
             </li>
             <li class="nav-item _bo">
-              <a class="nav-link navItem" routerLink="/about">ABOUT</a>
+              <a
+                class="nav-link navItem"
+                routerLink="/about"
+                data-bs-toggle="collapse"
+                data-bs-target=".navbar-collapse.show"
+                >ABOUT</a
+              >
             </li>
             <li class="nav-item _bo">
-              <a class="nav-link navItem" routerLink="/recipe">RECIPES</a>
+              <a
+                class="nav-link navItem"
+                routerLink="/recipe"
+                data-bs-toggle="collapse"
+                data-bs-target=".navbar-collapse.show"
+                >RECIPES</a
+              >
             </li>
             <li class="nav-item _bo">
-              <a class="nav-link navItem" routerLink="/startHere">START HERE</a>
+              <a
+                class="nav-link navItem"
+                routerLink="/startHere"
+                data-bs-toggle="collapse"
+                data-bs-target=".navbar-collapse.show"
+                >START HERE</a
+              >
             </li>
             <li class="nav-item _bo">
-              <a class="nav-link" href="#">
-                <i class="fa-solid fa-magnifying-glass fs-5 color"></i>
-              </a>
+              <a
+                class="nav-link navItem"
+                routerLink="/Login"
+                data-bs-toggle="collapse"
+                data-bs-target=".navbar-collapse.show"
+                >LOGIN</a
+              >
             </li>
           </ul>
         </div>

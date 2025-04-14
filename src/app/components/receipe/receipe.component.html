@@ -27,7 +27,7 @@
       TOP RATED RECIPES
     </h3>
     <p class="bottomP col-7 text-center d-none d-lg-block d-md-block">
-      Out of all the many recipes on Pinch of Yum, these are our shining stars -
+      Out of all the many recipes on Cook & Crave, these are our shining stars -
       the recipes we come back to again and again (and again).
     </p>
   </div>
@@ -41,7 +41,7 @@
       *ngFor="let recipe of topRated"
     >
       <div class="col-lg-5 col-md-4 col-6 imgH">
-        <a href="">
+        <a (click)="getRecipe(recipe.RecipeID)" style="cursor: pointer">
           <img
             [src]="recipe.ImageURl"
             class="img-fluid w-100 h-100 object-fit-cover"
@@ -52,7 +52,7 @@
       <div
         class="col-lg-6 col-md-7 col-5 imgH d-flex flex-column justify-content-start align-items-start"
       >
-        <a href=""
+        <a (click)="getRecipe(recipe.RecipeID)" style="cursor: pointer"
           ><h5>{{ recipe.Title }}</h5></a
         >
         <app-star-rating [rating]="recipe.Ratings.score"></app-star-rating>
@@ -64,9 +64,14 @@
 
 <!--button view all recipes-->
 <div class="d-flex justify-content-center mb-4 CviewBTN">
-  <button class="col-lg-4 col-md-6 col-10 viewBTN">+ VIEW ALL RECIPES</button>
+  <button
+    class="col-lg-4 col-md-6 col-10 viewBTN"
+    (click)="getAllRecipes('all')"
+  >
+    + VIEW ALL RECIPES
+  </button>
 </div>
-
+<!--Categories-->
 <div
   class="col-12 justify-content-center align-items-center d-flex mt-5 flex-column"
 >
@@ -77,8 +82,8 @@
         *ngFor="let item of Popularcategories"
         class="col-lg-4 col-md-4 col-6"
       >
-        <a href="" class="cat"
-          ><li class="col-12" [value]="item.Id">{{ item.Name }}</li></a
+        <a style="cursor: pointer" class="cat" (click)="getRecipesCat(item.Id)"
+          ><li class="col-12">{{ item.Name }}</li></a
         >
       </ul>
     </div>
@@ -91,7 +96,7 @@
         *ngFor="let item of MealTypecategories"
         class="col-lg-4 col-md-4 col-6"
       >
-        <a href="" class="cat"
+        <a style="cursor: pointer" class="cat" (click)="getRecipesCat(item.Id)"
           ><li class="col-12" [value]="item.Id">{{ item.Name }}</li></a
         >
       </ul>
@@ -101,7 +106,7 @@
     <h3 class="col-12 pb-2 catTitle">COURSE CATEGORIES</h3>
     <div class="col-12 d-flex justify-content-between flex-wrap">
       <ul *ngFor="let item of Coursecategories" class="col-lg-4 col-md-4 col-6">
-        <a href="" class="cat"
+        <a style="cursor: pointer" class="cat" (click)="getRecipesCat(item.Id)"
           ><li class="col-12" [value]="item.Id">{{ item.Name }}</li></a
         >
       </ul>

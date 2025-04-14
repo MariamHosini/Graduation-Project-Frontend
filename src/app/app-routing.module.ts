@@ -4,14 +4,24 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { StartHereComponent } from './components/start-here/start-here.component';
 import { ReceipeComponent } from './components/receipe/receipe.component';
+import { RecipesShowComponent } from './components/recipes-show/recipes-show.component';
+import { OneRecipeShowComponent } from './components/one-recipe-show/one-recipe-show.component';
+import { LogInComponent } from './components/log-in/log-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'recipe', component: ReceipeComponent },
+  { path: 'Login', component: LogInComponent },
+  { path: 'SignUp', component: SignUpComponent },
   { path: 'startHere', component: StartHereComponent },
+  { path: 'recipesShow/:id', component: RecipesShowComponent },
+  { path: 'oneRecipeShow/:recipeID', component: OneRecipeShowComponent },
 
+  { path: 'Profile/:UserId', component: UserProfileComponent },
   { path: '**', redirectTo: 'home' },
 ];
 
