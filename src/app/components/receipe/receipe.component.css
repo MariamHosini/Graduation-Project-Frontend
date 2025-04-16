@@ -58,7 +58,42 @@ li {
   transition: color 0.3s ease, transform 0.3s ease;
   color: #ac3746;
 }
+::ng-deep .custom-ng-select .ng-select-container .ng-placeholder {
+  color: #4d4c4c; /* اختر اللون الذي تريده */
+  font-size: 20px;
+}
+.custom-ng-select ::ng-deep .ng-dropdown-panel {
+  background-color: #f1eeeb; /* لون الخلفية */
+  border: 1px #c7b7a3 solid; /* إطار زي الـ select */
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* شادو خفيف */
+  font-size: 1rem;
+  padding: 0.25rem 0;
+
+  padding: 3vh 3vw;
+  z-index: 1050; /* عشان ما يستخبّاش تحت حاجة */
+}
+.custom-ng-select ::ng-deep .ng-select-container {
+  border-radius: 0.375rem; /* نفس bootstrap rounded */
+  height: 10vh; /* زي select العادية */
+  padding: 1rem 0px;
+  font-size: 1rem;
+
+  box-shadow: none;
+}
 @media (min-width: 769px) and (max-width: 1024px) {
+  ::ng-deep .custom-ng-select .ng-select-container .ng-placeholder {
+    color: #4d4c4c; /* اختر اللون الذي تريده */
+    font-size: 18px;
+  }
+  .custom-ng-select ::ng-deep .ng-select-container {
+    border-radius: 0.375rem; /* نفس bootstrap rounded */
+    height: 10vh; /* زي select العادية */
+    padding: 0.8rem 0.8rem;
+    font-size: 1rem;
+
+    box-shadow: none;
+  }
   li {
     font-size: 18px;
     color: #696764;
@@ -94,6 +129,18 @@ li {
   }
 }
 @media (min-width: 601px) and (max-width: 768px) {
+  ::ng-deep .custom-ng-select .ng-select-container .ng-placeholder {
+    color: #4d4c4c; /* اختر اللون الذي تريده */
+    font-size: 19px;
+  }
+  .custom-ng-select ::ng-deep .ng-select-container {
+    border-radius: 0.375rem; /* نفس bootstrap rounded */
+    height: 9vh; /* زي select العادية */
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+
+    box-shadow: none;
+  }
   .catTitle {
     color: #6d2932;
     font-size: 25px;
@@ -130,6 +177,18 @@ li {
   }
 }
 @media (max-width: 600px) {
+  ::ng-deep .custom-ng-select .ng-select-container .ng-placeholder {
+    color: #4d4c4c; /* اختر اللون الذي تريده */
+    font-size: 15px;
+  }
+  .custom-ng-select ::ng-deep .ng-select-container {
+    border-radius: 0.375rem; /* نفس bootstrap rounded */
+    height: 6vh; /* زي select العادية */
+    padding: 0.2rem 0.8rem;
+    font-size: 1rem;
+
+    box-shadow: none;
+  }
   .catTitle {
     color: #6d2932;
     font-size: 18px !important;

@@ -1,0 +1,68 @@
+h1 {
+  color: #561c24;
+  font-weight: 600;
+  font-family: "Dancing Script", cursive;
+}
+
+.imgContainer {
+  height: 40vh;
+}
+.UserName {
+  font-size: 25px;
+  font-weight: 600;
+}
+i {
+  font-size: 30px;
+}
+input {
+  border: 2px solid #561c24;
+}
+input:focus {
+  background-color: #ece2d5;
+  outline: none;
+  box-shadow: none;
+  border-color: #561c24;
+}
+button {
+  border: 2px #561c24 solid !important;
+  font-family: "Dancing Script", cursive;
+  font-weight: 600;
+  background-color: #561c24;
+  color: #ece2d5;
+}
+button:hover {
+  border: 2px #561c24 solid !important;
+  font-family: "Dancing Script", cursive;
+  font-weight: 600;
+  background-color: #ece2d5 !important;
+  color: #561c24 !important;
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .imgContainer {
+    height: 40vh;
+  }
+  .UserName {
+    font-size: 25px;
+    font-weight: 600;
+  }
+}
+@media (min-width: 601px) and (max-width: 768px) {
+  .imgContainer {
+    height: 25vh;
+  }
+  .UserName {
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 600px) {
+  .imgContainer {
+    height: 40vh;
+  }
+
+  .UserName {
+    font-size: 25px;
+    font-weight: 600;
+  }
+}

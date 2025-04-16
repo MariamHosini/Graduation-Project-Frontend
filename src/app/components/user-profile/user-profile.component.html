@@ -1,1 +1,68 @@
-<p>user-profile works!</p>
+<div class="col-12 justify-content-center d-flex mb-5">
+  <div
+    class="col-12 d-flex flex-column justify-content-between align-items-center"
+  >
+    <!--Profile -->
+    <div
+      class="ps-4 pb-3 pt-3 col-12 d-flex flex-row align-items-center userDataContanier"
+    >
+      <div class="rounded-4 imgContainer">
+        <img
+          class="object-fit-contain img-fluid w-125 h-100 rounded-circle"
+          [src]="user.UserImage"
+        />
+      </div>
+      <div class="ms-3 pt-3">
+        <p class="UserName">
+          {{ user.UserName }}
+          <a (click)="EditData(user.Email)" style="cursor: pointer"
+            ><i class="bi bi-pencil-square"></i
+          ></a>
+        </p>
+      </div>
+    </div>
+    <h1 class="text-center mt-5 d-block">Welcome Back {{ user.UserName }}</h1>
+    <!--Saved Posts-->
+    <div
+      class="ps-3 ps-lg-0 ps-md-0 col-12 col-lg-8 col-md-7 mt-lg-0 mt-md-0 mt-4"
+    >
+      <p class="saved text-center">Saved Recipes</p>
+      <div class="col-12 d-flex justify-content-center flex-wrap">
+        <!--image-->
+        <div
+          *ngFor="let recipe of topRated"
+          class="col-lg-4 col-md-6 col-6 d-flex justify-content-center mb-3"
+        >
+          <div class="col-10 d-flex flex-column justify-content-between">
+            <div class="imgH">
+              <a (click)="getRecipe(recipe.RecipeID)" style="cursor: pointer">
+                <img
+                  [src]="recipe.ImageURl"
+                  class="img-fluid w-100 h-100 object-fit-cover"
+                />
+              </a>
+            </div>
+            <div>
+              <a (click)="getRecipe(recipe.RecipeID)" style="cursor: pointer"
+                ><h5 class="text-center col-12 mt-3">{{ recipe.Title }}</h5></a
+              >
+            </div>
+
+            <div
+              class="d-flex justify-content-center align-items-center flex-column"
+            >
+              <div
+                class="col-12 col-lg-6 col-md-6 d-flex justify-content-center x"
+              >
+                <app-star-rating
+                  [rating]="recipe.Ratings.score"
+                ></app-star-rating>
+              </div>
+              <div class="avg">{{ recipe.Ratings.score }} Average</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

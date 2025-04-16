@@ -1,0 +1,93 @@
+.imgContainer {
+  height: 13vh;
+}
+
+.UserName {
+  font-size: 25px;
+  font-weight: 600;
+  color: #242424;
+}
+.userDataContanier {
+  border-bottom: 1px solid #c7b7a3;
+}
+.saved {
+  font-size: 40px;
+  font-weight: 600;
+  color: #561c24;
+  font-family: "Dancing Script", cursive;
+}
+h1 {
+  font-size: 45px !important;
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  h1 {
+    font-size: 45px !important;
+  }
+  .saved {
+    font-size: 40px;
+    font-weight: 600;
+    color: #561c24;
+    font-family: "Dancing Script", cursive;
+  }
+  .imgContainer {
+    height: 13vh;
+  }
+  .UserName {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .userDataContanier {
+    border-bottom: 1px solid #c7b7a3;
+  }
+}
+@media (min-width: 601px) and (max-width: 768px) {
+  h1 {
+    font-size: 40px !important;
+  }
+  .saved {
+    font-size: 30px;
+    font-weight: 600;
+    color: #561c24;
+    font-family: "Dancing Script", cursive;
+  }
+  .imgContainer {
+    height: 10vh;
+  }
+  .UserName {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .userDataContanier {
+    border-bottom: 1px solid #c7b7a3;
+  }
+}
+.imgH {
+  height: 20vh;
+}
+h1 {
+  font-size: 25px;
+  font-weight: 600;
+  color: #561c24;
+  font-family: "Dancing Script", cursive;
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 27px !important;
+  }
+  .saved {
+    font-size: 25px;
+    font-weight: 600;
+    color: #561c24;
+    font-family: "Dancing Script", cursive;
+  }
+  .imgContainer {
+    height: 10vh;
+  }
+  .userDataContanier {
+    border-bottom: 1px solid #c7b7a3;
+  }
+  .UserName {
+    font-size: 15px;
+    font-weight: 600;
+  }
+}

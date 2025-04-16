@@ -4,7 +4,7 @@
       <!-- Form Column -->
       <div class="content col-12 col-lg-6 p-4 p-lg-5">
         <h2 class="mb-4 text-center">Welcome Back</h2>
-        <form [formGroup]="LoginForm">
+        <form [formGroup]="LoginForm" (ngSubmit)="clicked()">
           <!--Email-->
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label"

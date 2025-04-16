@@ -16,7 +16,7 @@ export class OneRecipeShowComponent implements OnInit {
     private _ActivatedRoute: ActivatedRoute,
     private _topRatedServices: TopRatedService
   ) {}
-  ngOnInit(): void {
+  ngOnInit() {
     this.recipeID = parseInt(
       this._ActivatedRoute.snapshot.paramMap.get('recipeID') ?? '0'
     );

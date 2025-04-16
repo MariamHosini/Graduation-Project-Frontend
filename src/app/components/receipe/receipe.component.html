@@ -10,9 +10,24 @@
       of our most tried-and-true… no matter how you browse, we’re sure you’ll
       find just what you were looking for.
     </p>
-    <div class="search col-9 ps-lg-5 ps-3">
-      <a class="pe-3"><i class="fa-solid fa-magnifying-glass icon"></i></a>
-      <input type="text" placeholder="Search by keyword" class="col-8" />
+    <div
+      class="search col-9 ps-lg-2 ps-3 d-flex justify-content-start align-items-center"
+    >
+      <a class="col-1 d-flex justify-content-around"
+        ><i class="fa-solid fa-magnifying-glass icon"></i
+      ></a>
+      <div class="col-11 col-lg-11 col-md-11">
+        <ng-select
+          class="custom-ng-select"
+          [items]="selectedOptions"
+          bindLabel="id"
+          bindValue="displayName"
+          placeholder="Search by keyword"
+          [(ngModel)]="selectedCategory"
+          [searchable]="true"
+        >
+        </ng-select>
+      </div>
     </div>
   </div>
 </section>

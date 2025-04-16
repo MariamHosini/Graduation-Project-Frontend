@@ -52,3 +52,45 @@ h5 {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
 }
+
+.custom-ng-select ::ng-deep .ng-select-container {
+  border: 2px solid #6d2932;
+  border-radius: 0.375rem; /* نفس bootstrap rounded */
+  min-height: 38px; /* زي select العادية */
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+
+  box-shadow: none;
+}
+.custom-ng-select .ng-select-container {
+  padding: 15px !important;
+}
+.custom-ng-select ::ng-deep .ng-select-container:hover {
+  border-color: #6d2932;
+}
+
+.custom-ng-select ::ng-deep .ng-select-container:focus-within {
+  border-color: #6d2932;
+  box-shadow: 0 0 0 0.2rem #6d2932;
+}
+
+.custom-ng-select ::ng-deep .ng-select-dropdown {
+  z-index: 1050;
+  background-color: #6d2932;
+}
+
+.custom-ng-select ::ng-deep .ng-dropdown-panel {
+  background-color: #f8f9fa; /* لون الخلفية */
+  border: 1px solid #6d2932; /* إطار زي الـ select */
+  border-radius: 0.375rem; /* نعومة الحواف */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* شادو خفيف */
+  font-size: 1rem;
+  padding: 0.25rem 0;
+  z-index: 1050; /* عشان ما يستخبّاش تحت حاجة */
+}
+::ng-deep .custom-ng-select .ng-select-container .ng-placeholder {
+  color: #4d4c4c; /* اختر اللون الذي تريده */
+}
+::ng-deep .custom-ng-select .ng-select-container .ng-input {
+  padding: 0px 12px; /* تعيين padding للـ input داخل ng-select */
+}

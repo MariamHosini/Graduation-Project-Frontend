@@ -20,17 +20,18 @@ export class TopRatedService {
       CuisineType: 'Egyptian',
       CreatedAt: new Date('2024-01-10'),
       Author: { UserName: 'OmYoussef', Id: 'user123' },
-      Comments: {
-        CommentID: '101',
-        Content: 'Yummy!',
-        CreatedAt: new Date('2024-01-11'),
-      },
+      Comments: [
+        {
+          CommentID: '101',
+          Content: 'Yummy!',
+          CreatedAt: new Date('2024-01-11'),
+        },
+      ],
       CategoryNames: ['Vegan', 'Street Food'],
-      RecipeIngredients: [
+      Ingredients: [
         {
           Quantity: 1,
           Unit: 'cup',
-
           IngredientName: 'Lentils',
           CaloriesPer100g: 116,
           Protein: 9.02,
@@ -39,16 +40,6 @@ export class TopRatedService {
         {
           Quantity: 1,
           Unit: 'cup',
-
-          IngredientName: 'Lentils',
-          CaloriesPer100g: 116,
-          Protein: 9.02,
-          IngredientID: 1,
-        },
-        {
-          Quantity: 1,
-          Unit: 'cup',
-
           IngredientName: 'Lentils',
           CaloriesPer100g: 116,
           Protein: 9.02,
@@ -56,6 +47,9 @@ export class TopRatedService {
         },
       ],
       Ratings: { score: 4.8 },
+      CreatorName: 'kk',
+      TotalCalories: 29,
+      Calories: 30,
     },
     {
       RecipeID: 2,
@@ -70,14 +64,19 @@ export class TopRatedService {
       CuisineType: 'Egyptian',
       CreatedAt: new Date('2024-02-05'),
       Author: { UserName: 'ChefHana', Id: 'user456' },
-      Comments: {
-        CommentID: '102',
-        Content: 'Very traditional!',
-        CreatedAt: new Date('2024-02-06'),
-      },
+      Comments: [
+        {
+          CommentID: '102',
+          Content: 'Very traditional!',
+          CreatedAt: new Date('2024-02-06'),
+        },
+      ],
       CategoryNames: ['Traditional', 'Soup'],
-      RecipeIngredients: [],
+      Ingredients: [],
       Ratings: { score: 4.6 },
+      CreatorName: 'kk',
+      TotalCalories: 29,
+      Calories: 30,
     },
     {
       RecipeID: 3,
@@ -91,14 +90,19 @@ export class TopRatedService {
       CuisineType: 'Italian',
       CreatedAt: new Date('2024-03-01'),
       Author: { UserName: 'MarcoChef', Id: 'user789' },
-      Comments: {
-        CommentID: '103',
-        Content: 'Molto bene!',
-        CreatedAt: new Date('2024-03-02'),
-      },
+      Comments: [
+        {
+          CommentID: '103',
+          Content: 'Molto bene!',
+          CreatedAt: new Date('2024-03-02'),
+        },
+      ],
       CategoryNames: ['Pasta'],
-      RecipeIngredients: [],
+      Ingredients: [],
       Ratings: { score: 4.7 },
+      CreatorName: 'kk',
+      TotalCalories: 29,
+      Calories: 30,
     },
     {
       RecipeID: 4,
@@ -112,14 +116,19 @@ export class TopRatedService {
       CuisineType: 'Indian',
       CreatedAt: new Date('2024-03-12'),
       Author: { UserName: 'SpiceKing', Id: 'user321' },
-      Comments: {
-        CommentID: '104',
-        Content: 'Nice spice level!',
-        CreatedAt: new Date('2024-03-13'),
-      },
+      Comments: [
+        {
+          CommentID: '104',
+          Content: 'Nice spice level!',
+          CreatedAt: new Date('2024-03-13'),
+        },
+      ],
       CategoryNames: ['Spicy', 'Chicken'],
-      RecipeIngredients: [],
+      Ingredients: [],
       Ratings: { score: 4.9 },
+      CreatorName: 'kk',
+      TotalCalories: 29,
+      Calories: 30,
     },
     {
       RecipeID: 5,
@@ -133,14 +142,19 @@ export class TopRatedService {
       CuisineType: 'Mexican',
       CreatedAt: new Date('2024-04-01'),
       Author: { UserName: 'TacoQueen', Id: 'user654' },
-      Comments: {
-        CommentID: '105',
-        Content: 'So easy and good!',
-        CreatedAt: new Date('2024-04-01'),
-      },
+      Comments: [
+        {
+          CommentID: '105',
+          Content: 'So easy and good!',
+          CreatedAt: new Date('2024-04-01'),
+        },
+      ],
       CategoryNames: ['Snacks'],
-      RecipeIngredients: [],
+      Ingredients: [],
       Ratings: { score: 4.4 },
+      CreatorName: 'kk',
+      TotalCalories: 29,
+      Calories: 30,
     },
     {
       RecipeID: 6,
@@ -154,14 +168,19 @@ export class TopRatedService {
       CuisineType: 'Japanese',
       CreatedAt: new Date('2024-04-05'),
       Author: { UserName: 'SushiSensei', Id: 'user999' },
-      Comments: {
-        CommentID: '106',
-        Content: 'So fresh!',
-        CreatedAt: new Date('2024-04-06'),
-      },
+      Comments: [
+        {
+          CommentID: '106',
+          Content: 'So fresh!',
+          CreatedAt: new Date('2024-04-06'),
+        },
+      ],
       CategoryNames: ['Seafood'],
-      RecipeIngredients: [],
+      Ingredients: [],
       Ratings: { score: 4.9 },
+      CreatorName: 'kk',
+      TotalCalories: 29,
+      Calories: 30,
     },
     {
       RecipeID: 7,
@@ -175,14 +194,19 @@ export class TopRatedService {
       CuisineType: 'Middle Eastern',
       CreatedAt: new Date('2024-04-07'),
       Author: { UserName: 'FalafelFan', Id: 'user321' },
-      Comments: {
-        CommentID: '107',
-        Content: 'Crispy outside, soft inside!',
-        CreatedAt: new Date('2024-04-08'),
-      },
+      Comments: [
+        {
+          CommentID: '107',
+          Content: 'Crispy outside, soft inside!',
+          CreatedAt: new Date('2024-04-08'),
+        },
+      ],
       CategoryNames: ['Vegan'],
-      RecipeIngredients: [],
+      Ingredients: [],
       Ratings: { score: 4.5 },
+      CreatorName: 'kk',
+      TotalCalories: 29,
+      Calories: 30,
     },
     {
       RecipeID: 8,
@@ -196,14 +220,19 @@ export class TopRatedService {
       CuisineType: 'French',
       CreatedAt: new Date('2024-04-09'),
       Author: { UserName: 'BistroBoss', Id: 'user555' },
-      Comments: {
-        CommentID: '108',
-        Content: 'Rich and warm.',
-        CreatedAt: new Date('2024-04-10'),
-      },
+      Comments: [
+        {
+          CommentID: '108',
+          Content: 'Rich and warm.',
+          CreatedAt: new Date('2024-04-10'),
+        },
+      ],
       CategoryNames: ['Soup'],
-      RecipeIngredients: [],
+      Ingredients: [],
       Ratings: { score: 4.3 },
+      CreatorName: 'kk',
+      TotalCalories: 29,
+      Calories: 30,
     },
     {
       RecipeID: 9,
@@ -217,14 +246,19 @@ export class TopRatedService {
       CuisineType: 'Thai',
       CreatedAt: new Date('2024-04-10'),
       Author: { UserName: 'ThaiTiger', Id: 'user888' },
-      Comments: {
-        CommentID: '109',
-        Content: 'Better than takeout!',
-        CreatedAt: new Date('2024-04-10'),
-      },
+      Comments: [
+        {
+          CommentID: '109',
+          Content: 'Better than takeout!',
+          CreatedAt: new Date('2024-04-10'),
+        },
+      ],
       CategoryNames: ['Noodles'],
-      RecipeIngredients: [],
+      Ingredients: [],
       Ratings: { score: 4.7 },
+      CreatorName: 'kk',
+      TotalCalories: 29,
+      Calories: 30,
     },
   ];
 }

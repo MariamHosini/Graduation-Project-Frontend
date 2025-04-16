@@ -1,0 +1,176 @@
+<h1 class="text-center mt-3">Profile Editing Data</h1>
+
+<div class="col-12 d-flex justify-content-center mt-4 mb-4">
+  <div
+    class="col-10 col-lg-8 col-md-8 d-flex flex-column flex-lg-row flex-md-row justify-content-start align-items-center"
+  >
+    <!--Right Side-->
+    <div class="col-lg-4 col-md-5">
+      <div
+        class="rounded-4 imgContainer col-lg-12 col-md-10 col-12 d-flex justify-content-center"
+      >
+        <img
+          class="object-fit-contain img-fluid w-125 h-100 rounded-circle"
+          [src]="user.UserImage"
+        />
+      </div>
+      <div class="d-flex justify-content-around col-lg-12 col-md-3 col-12 mt-2">
+        <i
+          class="bi bi-camera-fill"
+          style="color: #6d2932; cursor: pointer"
+          (click)="editImage = true"
+        ></i>
+        <i
+          class="bi bi-trash3-fill"
+          style="color: gray; cursor: pointer"
+          (click)="ClearImage()"
+        ></i>
+      </div>
+      <div *ngIf="editImage">
+        <form [formGroup]="ImageForm">
+          <input
+            formControlName="image"
+            type="text"
+            placeholder="Enter Image  URL"
+            class="form-control mb-3"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+          <button
+            type="submit"
+            class="btn sign-btn me-3 ms-3"
+            (click)="SavingImage()"
+          >
+            Save Image
+          </button>
+          <button
+            class="btn sign-btn"
+            (click)="editImage = false; ImageForm.reset()"
+          >
+            Cancel
+          </button>
+        </form>
+      </div>
+    </div>
+    <!--left Side-->
+    <div class="ms-lg-5 ms-md-3 col-lg-6 col-10 col-md-7">
+      <p class="UserName" *ngIf="!editName">
+        {{ user.UserName }}
+        <a (click)="editName = true" style="cursor: pointer"
+          ><i class="bi bi-pencil-square fs-5"></i
+        ></a>
+      </p>
+      <p class="UserName" *ngIf="!editPassword">
+        Password
+        <a (click)="editPassword = true" style="cursor: pointer"
+          ><i class="bi bi-pencil-square fs-5"></i
+        ></a>
+      </p>
+      <form [formGroup]="EditForm" (ngSubmit)="Edit()" class="mb-3">
+        <!--Username-->
+        <div class="mb-3 col-12" *ngIf="editName">
+          <label for="exampleInputEmail1" class="form-label">Username</label>
+          <input
+            formControlName="username"
+            type="text"
+            placeholder="Enter the new username"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+          <div
+            *ngIf="
+              EditForm.get('username')?.touched &&
+              EditForm.get('username')?.invalid
+            "
+          >
+            <small
+              *ngIf="EditForm.get('email')?.errors?.['required']"
+              style="color: red"
+              >Username is required</small
+            >
+          </div>
+        </div>
+
+        <!--Password-->
+        <div class="mb-3" *ngIf="editPassword">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input
+            placeholder="Please enter strong password"
+            formControlName="password"
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+          <div
+            *ngIf="
+              EditForm.get('password')?.touched &&
+              EditForm.get('password')?.invalid
+            "
+          >
+            <small
+              *ngIf="EditForm.get('password')?.errors?.['required']"
+              style="color: red"
+              >Password is required</small
+            >
+            <small
+              *ngIf="EditForm.get('password')?.errors?.['minlength']"
+              style="color: red"
+            >
+              Password must be at least 6 characters
+            </small>
+          </div>
+        </div>
+        <!--Confirm password-->
+        <div class="mb-3" *ngIf="editPassword">
+          <label for="exampleInputPassword1" class="form-label"
+            >Confirm Password</label
+          >
+          <input
+            placeholder="Please confirm your password"
+            formControlName="confirmPassword"
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+          <div
+            *ngIf="
+              EditForm.hasError('passwordMismatch') &&
+              EditForm.get('confirmPassword')?.touched
+            "
+          >
+            <small style="color: red">Passwords do not match</small>
+          </div>
+        </div>
+        <button
+          *ngIf="editName || editPassword"
+          type="submit"
+          class="btn sign-btn"
+          [disabled]="
+            (editName && EditForm.controls['username'].invalid) ||
+            (editPassword &&
+              (EditForm.controls['password'].invalid ||
+                EditForm.controls['confirmPassword'].invalid ||
+                EditForm.hasError('passwordMismatch'))) ||
+            (editName && editPassword && EditForm.invalid)
+          "
+        >
+          Save Changes
+        </button>
+        <button
+          *ngIf="editName || editPassword"
+          class="btn sign-btn ms-2 fs-6 col-3"
+          (click)="editName = false; EditForm.reset(); editPassword = false"
+        >
+          Cancel
+        </button>
+      </form>
+      <button
+        class="btn sign-btn col-5 fs-5 col-lg-3 col-md-4"
+        (click)="goBack()"
+      >
+        Go Back
+      </button>
+    </div>
+  </div>
+</div>

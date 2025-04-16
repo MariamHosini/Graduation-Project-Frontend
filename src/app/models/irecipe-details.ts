@@ -6,16 +6,19 @@ import { IRecipeIngredieent } from './irecipe-ingredieent';
 export interface IRecipeDetails {
   RecipeID: number;
   Title: string;
-  ImageURl: string;
   Instruction: string;
   PrepTime: number;
+  Calories: number;
   Description: string;
   CookingTime: number;
   CuisineType: string;
   CreatedAt: Date;
   Author: IAuthor;
-  Comments: IComment;
-  CategoryNames: String[];
-  RecipeIngredients: IRecipeIngredieent[];
+  CreatorName: string;
+  Ingredients: IRecipeIngredieent[];
   Ratings: IRating;
+  Comments: IComment[];
+  CategoryNames: String[];
+  TotalCalories: number;
+  ImageURl: string;
 }

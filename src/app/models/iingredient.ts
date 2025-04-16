@@ -1,7 +1,8 @@
 export interface IIngredient {
+  IngredientID: number;
   Name: string;
+  Quantity: number;
   CaloriesPer100g: number;
   Protein: number;
-  Carbs: number;
-  Fats: number;
+  Unit: number;
 }

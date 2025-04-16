@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -15,6 +15,9 @@ import { OneRecipeShowComponent } from './components/one-recipe-show/one-recipe-
 import { LogInComponent } from './components/log-in/log-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { ProfileDataEditingComponent } from './components/profile-data-editing/profile-data-editing.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,8 +33,16 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     LogInComponent,
     SignUpComponent,
     UserProfileComponent,
+    AdminProfileComponent,
+    ProfileDataEditingComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    NgSelectModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

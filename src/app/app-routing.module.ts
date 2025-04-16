@@ -9,6 +9,8 @@ import { OneRecipeShowComponent } from './components/one-recipe-show/one-recipe-
 import { LogInComponent } from './components/log-in/log-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
+import { ProfileDataEditingComponent } from './components/profile-data-editing/profile-data-editing.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -20,8 +22,10 @@ const routes: Routes = [
   { path: 'startHere', component: StartHereComponent },
   { path: 'recipesShow/:id', component: RecipesShowComponent },
   { path: 'oneRecipeShow/:recipeID', component: OneRecipeShowComponent },
+  { path: 'UserProfile/:UserId', component: UserProfileComponent },
+  { path: 'Admin/:UserId', component: AdminProfileComponent },
+  { path: 'EditProfile/:UserEmail', component: ProfileDataEditingComponent },
 
-  { path: 'Profile/:UserId', component: UserProfileComponent },
   { path: '**', redirectTo: 'home' },
 ];
 

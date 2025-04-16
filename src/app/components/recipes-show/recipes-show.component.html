@@ -7,6 +7,19 @@
       <p class="d-inline ms-2">ALL RECIPES</p>
     </h2>
   </div>
+  <div class="col-lg-8 mb-5 col-md-9 col-10">
+    <ng-select
+      class="custom-ng-select"
+      [items]="selectedOptions"
+      bindLabel="displayName"
+      bindValue="id"
+      placeholder="Search by keyword"
+      [(ngModel)]="selectedCategory"
+      [searchable]="true"
+    >
+    </ng-select>
+  </div>
+
   <div class="d-flex justify-content-center col-md-10 col-11 col-lg-10">
     <div class="col-12 d-flex justify-content-center flex-wrap">
       <!--image-->
