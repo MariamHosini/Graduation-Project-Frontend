@@ -11,20 +11,21 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
 import { ProfileDataEditingComponent } from './components/profile-data-editing/profile-data-editing.component';
+import { notAuthGuard } from './guard/not-auth.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'recipe', component: ReceipeComponent },
-  { path: 'Login', component: LogInComponent },
-  { path: 'SignUp', component: SignUpComponent },
+  { path: 'Login', component: LogInComponent , canActivate: [notAuthGuard] },
+  { path: 'SignUp', component: SignUpComponent , canActivate: [notAuthGuard] },
   { path: 'startHere', component: StartHereComponent },
   { path: 'recipesShow/:id', component: RecipesShowComponent },
   { path: 'oneRecipeShow/:recipeID', component: OneRecipeShowComponent },
   { path: 'UserProfile/:UserId', component: UserProfileComponent },
-  { path: 'Admin/:UserId', component: AdminProfileComponent },
-  { path: 'EditProfile/:UserEmail', component: ProfileDataEditingComponent },
+  { path: 'Admin/:AdminID', component: AdminProfileComponent },
+  { path: 'EditProfile/:UserId', component: ProfileDataEditingComponent },
 
   { path: '**', redirectTo: 'home' },
 ];

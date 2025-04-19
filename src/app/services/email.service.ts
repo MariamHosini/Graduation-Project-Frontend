@@ -10,18 +10,18 @@ export class EmailService {
 
   Users: IuserEmail[] = [
     {
-      UserImage: '../../../assets/meme.jpg',
-      UserName: 'Mariam Hossini',
-      Email: 'hossinimariam93@gmail.com',
-      Password: 'mariam',
+      userImage: '../../../assets/meme.jpg',
+      userName: 'Mariam Hossini',
+      email: 'hossinimariam93@gmail.com',
+      password: 'mariam',
     },
   ];
   constructor() {}
 
   addUser(user: IuserEmail) {
-    this.existEmail.Email = user.Email;
-    this.existEmail.Password = user.Password;
-    this.existEmail.UserName = user.UserName;
+    this.existEmail.email = user.email;
+    this.existEmail.password = user.password;
+    this.existEmail.userName = user.userName;
     this.Users.push(this.existEmail);
   }
 }

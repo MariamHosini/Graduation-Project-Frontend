@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IIngredient } from '../models/iingredient';
 import { environment } from '../../environments/environment.development';
+import { IIngredientPost } from '../models/iingredientpost';
 
 @Injectable({
   providedIn: 'root',
@@ -17,12 +18,12 @@ export class APIIngredientService {
   }
 
   GetIngredientById(id: number): Observable<IIngredient> {
-    return this._httpClient.get<IIngredient>(
-      `${environment.baseURL}/api/ingredient?id=${id}`
+    return this._httpClient.get<IIngredient | any>(
+      `${environment.baseURL}/api/ingredient/${id}`
     );
   }
 
-  AddIngredient(IngredientToAdd: IIngredient) {
+  AddIngredient(IngredientToAdd: IIngredientPost) {
     return this._httpClient.post(
       `${environment.baseURL}/api/ingredient`,
       IngredientToAdd

@@ -50,7 +50,40 @@ h4 {
   font-family: "Dancing Script", cursive;
   font-size: 30px;
 }
+
+.commentContainer {
+  border: #561c24 1px solid;
+  height: 20vh;
+}
+.comment {
+  font-size: 27px;
+  color: #561c24;
+}
+
+.commentDate {
+  font-size: 15px;
+}
+.commentBody {
+  color: black;
+  font-size: 25px;
+}
 @media (min-width: 769px) and (max-width: 1024px) {
+  .commentContainer {
+    border: #561c24 1px solid;
+    height: 20vh;
+  }
+  .comment {
+    font-size: 27px;
+    color: #561c24;
+  }
+
+  .commentDate {
+    font-size: 15px;
+  }
+  .commentBody {
+    color: black;
+    font-size: 25px;
+  }
   h4 {
     color: #561c24;
     font-weight: 600;
@@ -86,6 +119,22 @@ h4 {
   }
 }
 @media (min-width: 601px) and (max-width: 768px) {
+  .commentContainer {
+    border: #561c24 1px solid;
+    height: 18vh;
+  }
+  .comment {
+    font-size: 22px;
+    color: #561c24;
+  }
+
+  .commentDate {
+    font-size: 13px;
+  }
+  .commentBody {
+    color: black;
+    font-size: 20px;
+  }
   h4 {
     color: #561c24;
     font-weight: 600;
@@ -121,6 +170,22 @@ h4 {
   }
 }
 @media (max-width: 600px) {
+  .commentContainer {
+    border: #561c24 1px solid;
+    height: 15vh;
+  }
+  .comment {
+    font-size: 18px;
+    color: #561c24;
+  }
+
+  .commentDate {
+    font-size: 10px;
+  }
+  .commentBody {
+    color: black;
+    font-size: 15px;
+  }
   h4 {
     color: #561c24;
     font-weight: 600;

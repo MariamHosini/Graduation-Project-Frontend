@@ -8,10 +8,10 @@
           <!--Email-->
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label"
-              >Email address</label
+              >UserName</label
             >
             <input
-              placeholder="Please enter email"
+              placeholder="Please enter your UserName"
               formControlName="email"
               type="email"
               class="form-control"
@@ -27,13 +27,9 @@
               <small
                 *ngIf="LoginForm.get('email')?.errors?.['required']"
                 style="color: red"
-                >Email is required</small
+                >UserName is required</small
               >
-              <small
-                *ngIf="LoginForm.get('email')?.errors?.['email']"
-                style="color: red"
-                >Invalid email format</small
-              >
+              
             </div>
           </div>
           <!--Password-->

@@ -1,1 +1,548 @@
-<p>admin-profile works!</p>
+<div class="col-12 justify-content-center d-flex mb-5">
+  <div
+    class="col-12 d-flex flex-column justify-content-between align-items-center"
+  >
+    <!--Profile -->
+    <div
+      class="ps-4 pb-3 pt-3 col-12 d-flex flex-row align-items-center userDataContanier"
+    >
+      <div class="rounded-4 imgContainer">
+        <img
+          class="object-fit-contain img-fluid w-125 h-100 rounded-circle"
+          [src]="user.profileImageUrl"
+        />
+      </div>
+      <div class="ms-3 pt-3">
+        <p class="UserName">
+          {{ user.userName }}
+          <a (click)="EditData()" style="cursor: pointer"
+            ><i class="bi bi-pencil-square"></i
+          ></a>
+        </p>
+      </div>
+    </div>
+    <h1 class="text-center mt-5 d-block">Welcome Back {{ user.userName }}</h1>
+    <!-- buttons-->
+    <div class="col-11 col-lg-8 col-md-10 d-flex justify-content-around mt-2">
+      <button
+        class="btn col-3"
+        (click)="
+          AddRecipe = true;
+          AddCategory = false;
+          AddIngredient = false;
+          recipe.categoryNames = [];
+          recipe.ingredients = []
+        "
+      >
+        Add Recipe
+      </button>
+      <button
+        class="btn col-4 col-lg-3 col-md-3"
+        (click)="AddCategory = true; AddIngredient = false; AddRecipe = false"
+      >
+        Add Category
+      </button>
+      <button
+        class="btn col-4 col-lg-3 col-md-3"
+        (click)="AddIngredient = true; AddCategory = false; AddRecipe = false"
+      >
+        Add Ingredient
+      </button>
+    </div>
+    <div
+      class="col-lg-7 col-md-7 col-10 mt-3 d-flex align-items-center"
+      *ngIf="AddCategory || AddIngredient || AddRecipe"
+    >
+      <!--Ingredient Form-->
+      <form
+        [formGroup]="ingredientForm"
+        (ngSubmit)="IngredientAdded()"
+        *ngIf="AddIngredient && AddCategory == false && AddRecipe == false"
+        class="col-12"
+      >
+        <!--name-->
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Ingredient name</label
+          >
+          <input
+            placeholder="Please enter the name"
+            formControlName="name"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+          <div
+            *ngIf="
+              ingredientForm.get('name')?.touched &&
+              ingredientForm.get('name')?.invalid
+            "
+          >
+            <small
+              *ngIf="ingredientForm.get('name')?.errors?.['required']"
+              style="color: red"
+              >Ingredient name is required</small
+            >
+          </div>
+        </div>
+     
+        <!--CaloriesPer100g-->
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"
+            >CaloriesPer100g</label
+          >
+          <input
+            formControlName="calories"
+            placeholder="Please enter the calories"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+          <div
+            *ngIf="
+              ingredientForm.get('calories')?.touched &&
+              ingredientForm.get('calories')?.invalid
+            "
+          >
+            <small
+              *ngIf="ingredientForm.get('calories')?.errors?.['required']"
+              style="color: red"
+              >Calories is required</small
+            >
+            <small
+              *ngIf="ingredientForm.get('calories')?.errors?.['pattern']"
+              style="color: red"
+              >Calories must be number</small
+            >
+          </div>
+        </div>
+        <!--Protein-->
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Protein</label>
+          <input
+            formControlName="protein"
+            placeholder="Please enter the protein"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+          <div
+            *ngIf="
+              ingredientForm.get('protein')?.touched &&
+              ingredientForm.get('protein')?.invalid
+            "
+          >
+            <small
+              *ngIf="ingredientForm.get('protein')?.errors?.['required']"
+              style="color: red"
+              >Protein is required</small
+            >
+            <small
+              *ngIf="ingredientForm.get('protein')?.errors?.['pattern']"
+              style="color: red"
+              >Protein must be number</small
+            >
+          </div>
+        </div>
+
+        <!--Fats-->
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Fats</label>
+          <input
+            formControlName="fats"
+            placeholder="Please enter the fats"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+          <div
+            *ngIf="
+              ingredientForm.get('fats')?.touched &&
+              ingredientForm.get('fats')?.invalid
+            "
+          >
+            <small
+              *ngIf="ingredientForm.get('fats')?.errors?.['required']"
+              style="color: red"
+              >Fats is required</small
+            >
+            <small
+              *ngIf="ingredientForm.get('fats')?.errors?.['pattern']"
+              style="color: red"
+              >Fats must be number</small
+            >
+          </div>
+        </div>
+        <!--Carbs-->
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Carbs</label>
+          <input
+            formControlName="carbs"
+            placeholder="Please enter the carbs"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+          <div
+            *ngIf="
+              ingredientForm.get('carbs')?.touched &&
+              ingredientForm.get('carbs')?.invalid
+            "
+          >
+            <small
+              *ngIf="ingredientForm.get('carbs')?.errors?.['required']"
+              style="color: red"
+              >Carbs is required</small
+            >
+            <small
+              *ngIf="ingredientForm.get('carbs')?.errors?.['pattern']"
+              style="color: red"
+              >Carbs must be number</small
+            >
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="btn sign-btn"
+          [disabled]="ingredientForm.invalid"
+        >
+          ADD
+        </button>
+        <button
+          type="submit"
+          class="btn sign-btn ms-2"
+          (click)="AddIngredient = false; ingredientForm.reset()"
+        >
+          Cancel
+        </button>
+      </form>
+      <!--Category Form-->
+      <form
+        class="col-12"
+        [formGroup]="categoryForm"
+        (ngSubmit)="CategoryAdded()"
+        *ngIf="AddCategory && AddRecipe == false && AddIngredient == false"
+      >
+        <!--name-->
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Category name</label
+          >
+          <input
+            placeholder="Please enter the name"
+            formControlName="name"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+          <div
+            *ngIf="
+              categoryForm.get('name')?.touched &&
+              categoryForm.get('name')?.invalid
+            "
+          >
+            <small
+              *ngIf="categoryForm.get('name')?.errors?.['required']"
+              style="color: red"
+              >Category name is required</small
+            >
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="btn sign-btn"
+          [disabled]="categoryForm.invalid"
+        >
+          ADD
+        </button>
+        <button
+          type="submit"
+          class="btn sign-btn ms-2"
+          (click)="AddCategory = false; categoryForm.reset()"
+        >
+          Cancel
+        </button>
+      </form>
+      <!--Recipe Form-->
+      <form
+        class="col-12"
+        [formGroup]="recipeForm"
+        *ngIf="AddRecipe && AddCategory == false && AddIngredient == false"
+      >
+        <!--image-->
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Recipe Image</label
+          >
+          <input
+            placeholder="Please enter the image"
+            formControlName="image"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+          <div
+            *ngIf="
+              recipeForm.get('image')?.touched &&
+              recipeForm.get('image')?.invalid
+            "
+          >
+            <small
+              *ngIf="recipeForm.get('image')?.errors?.['required']"
+              style="color: red"
+              >Recipe image is required</small
+            >
+          </div>
+        </div>
+        <!--title-->
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Recipe Title</label
+          >
+          <input
+            placeholder="Please enter the title"
+            formControlName="title"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+          <div
+            *ngIf="
+              recipeForm.get('title')?.touched &&
+              recipeForm.get('title')?.invalid
+            "
+          >
+            <small
+              *ngIf="recipeForm.get('title')?.errors?.['required']"
+              style="color: red"
+              >Recipe Title is required</small
+            >
+          </div>
+        </div>
+        <!--Instructions-->
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"
+            >Instructions</label
+          >
+          <input
+            formControlName="instructions"
+            placeholder="Please enter recipe instructions"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+          <div
+            *ngIf="
+              recipeForm.get('instructions')?.touched &&
+              recipeForm.get('instructions')?.invalid
+            "
+          >
+            <small
+              *ngIf="recipeForm.get('instructions')?.errors?.['required']"
+              style="color: red"
+              >Recipe instructions is required</small
+            >
+          </div>
+        </div>
+        <!--Preptime-->
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"
+            >Preparation Time</label
+          >
+          <input
+            formControlName="prepTime"
+            placeholder="Please enter recipe preparation time"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+          <div
+            *ngIf="
+              recipeForm.get('prepTime')?.touched &&
+              recipeForm.get('prepTime')?.invalid
+            "
+          >
+            <small
+              *ngIf="recipeForm.get('prepTime')?.errors?.['required']"
+              style="color: red"
+              >Preparation time is required</small
+            >
+            <small
+              *ngIf="recipeForm.get('prepTime')?.errors?.['pattern']"
+              style="color: red"
+              >Preparation time must be number</small
+            >
+          </div>
+        </div>
+        <!--description-->
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"
+            >Recipe Description</label
+          >
+          <input
+            formControlName="description"
+            placeholder="Please enter recipe description"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+          <div
+            *ngIf="
+              recipeForm.get('desscription')?.touched &&
+              recipeForm.get('desscription')?.invalid
+            "
+          >
+            <small
+              *ngIf="recipeForm.get('desscription')?.errors?.['required']"
+              style="color: red"
+              >Recipe desscription is required</small
+            >
+          </div>
+        </div>
+        <!--cookingtime-->
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"
+            >Cooking time</label
+          >
+          <input
+            formControlName="cookingtime"
+            placeholder="Please enter recipe cooking time"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+          <div
+            *ngIf="
+              recipeForm.get('cookingtime')?.touched &&
+              recipeForm.get('cookingtime')?.invalid
+            "
+          >
+            <small
+              *ngIf="recipeForm.get('cookingtime')?.errors?.['required']"
+              style="color: red"
+              >Recipe Cooking Time is required</small
+            >
+            <small
+              *ngIf="recipeForm.get('cookingtime')?.errors?.['pattern']"
+              style="color: red"
+              >Recipe Cooking Time must be number</small
+            >
+          </div>
+        </div>
+        <!--CuisineType-->
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"
+            >Cuisine Type</label
+          >
+          <input
+            formControlName="CuisineType"
+            placeholder="Please enter the Cuisine Type"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+          <div
+            *ngIf="
+              recipeForm.get('CuisineType')?.touched &&
+              recipeForm.get('CuisineType')?.invalid
+            "
+          >
+            <small
+              *ngIf="recipeForm.get('CuisineType')?.errors?.['required']"
+              style="color: red"
+              >Cuisine Type is required</small
+            >
+          </div>
+        </div>
+        <!--author-->
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"
+            >Author name</label
+          >
+          <input
+            formControlName="author"
+            placeholder="Please enter author name"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+          <div
+            *ngIf="
+              recipeForm.get('author')?.touched &&
+              recipeForm.get('author')?.invalid
+            "
+          >
+            <small
+              *ngIf="recipeForm.get('author')?.errors?.['required']"
+              style="color: red"
+              >Author name is required</small
+            >
+          </div>
+        </div>
+        <!--categories-->
+        <div class="mb-3 col-12">
+          <label for="exampleInputPassword1" class="form-label"
+            >Category name</label
+          >
+          <div class="d-flex justify-content-between col-12">
+            <input
+              formControlName="categories"
+              placeholder="Please enter category name "
+              class="col-8 x"
+              id="exampleInputPassword1"
+            />
+            <button class="btn sign-btn col-4" (click)="addReccipeCategory()">
+              + Category
+            </button>
+          </div>
+
+          <div
+            *ngIf="
+              recipeForm.get('categories')?.touched &&
+              recipeForm.get('categories')?.invalid
+            "
+          >
+            <small
+              *ngIf="recipeForm.get('categories')?.errors?.['required']"
+              style="color: red"
+              >Category name is required</small
+            >
+          </div>
+        </div>
+
+        <!--ingredients-->
+        <!--ingredient_name-->
+        <div class="mb-3 col-12">
+          <label for="exampleInputPassword1" class="form-label"
+            >Ingredients name</label
+          >
+          <div class="d-flex justify-content-between col-12">
+            <ng-select
+              formControlName="ingredient_name"
+              class="custom-ng-select y col-8"
+              [items]="selectedOptions"
+              bindValue="IngredientID"
+              bindLabel="IngredientName"
+              placeholder="Choose ingredient"
+              [(ngModel)]="selectedIngredient"
+              [searchable]="true"
+              (click)="addReccipeIngredient()"
+            >
+            </ng-select>
+            <button class="btn sign-btn col-4" >
+              + Ingredient
+            </button>
+          </div>
+        </div>
+
+>
+        <button
+          (click)="recipeAdded()"
+          type="submit"
+          class="btn sign-btn"
+          [disabled]="recipeForm.invalid"
+        >
+          ADD
+        </button>
+        <button
+          class="btn sign-btn ms-2"
+          (click)="AddRecipe = false; recipeForm.reset()"
+        >
+          Cancel
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
