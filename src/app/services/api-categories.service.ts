@@ -13,7 +13,7 @@ export class APICategoriesService {
 
   GetAllCategories(): Observable<ICategoryToAdd[]> {
     return this._httpClient.get<ICategoryToAdd[]>(
-      `${environment.baseURL}/api/category`
+      `${environment.baseURL}/api/Category`
     );
   }
 
@@ -47,5 +47,10 @@ export class APICategoriesService {
     return this._httpClient.delete(`${environment.baseURL}/api/category`, {
       body: CatID,
     });
+  }
+  GetAllCategoriesV2(): Observable<ICategory[]> {
+    return this._httpClient.get<ICategory[]>(
+      `${environment.baseURL}/api/Category/ALL`
+    );
   }
 }

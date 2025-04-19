@@ -1,6 +1,6 @@
 export interface IuserEmail {
-  UserImage: string;
-  UserName: string;
-  Password: string;
-  Email: string;
+  userImage: string;
+  userName: string;
+  password: string;
+  email: string;
 }

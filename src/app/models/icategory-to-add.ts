@@ -1,4 +1,4 @@
 export interface ICategoryToAdd {
-  CategoryID: number;
-  Name: string;
+  categoryID: number;
+  name: string;
 }

@@ -81,6 +81,7 @@ li {
 
   box-shadow: none;
 }
+
 @media (min-width: 769px) and (max-width: 1024px) {
   ::ng-deep .custom-ng-select .ng-select-container .ng-placeholder {
     color: #4d4c4c; /* اختر اللون الذي تريده */

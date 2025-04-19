@@ -5,47 +5,44 @@
   <div class="col-10 col-lg-6 col-md-7 d-flex flex-column">
     <div class="d-flex align-items-center">
       <h2>Recipe Name:</h2>
-      <p class="pt-3 ms-2">{{ recipe.Title }}</p>
+      <p class="pt-3 ms-2">{{ recipe.title }}</p>
     </div>
     <div class="d-flex align-items-center">
       <h2>Cuisine Type:</h2>
-      <p class="pt-3 ms-2">{{ recipe.CuisineType }}</p>
+      <p class="pt-3 ms-2">{{ recipe.cuisineType }}</p>
     </div>
     <div class="d-flex align-items-center">
       <h2>Author:</h2>
-      <p class="pt-3 ms-2">{{ recipe.Author.UserName }}</p>
+      <p class="pt-3 ms-2">{{ recipe.author.userName }}</p>
     </div>
     <div class="d-flex align-items-center">
       <h2>Rating:</h2>
       <app-star-rating
-        [rating]="recipe.Ratings.score"
+        [rating]="recipe.avgRating"
         class="ms-2 z-0"
       ></app-star-rating>
-      <p class="ms-1 pt-3">{{ recipe.Ratings.score }}</p>
+      <p class="ms-1 pt-3">{{ recipe.avgRating }}</p>
     </div>
   </div>
   <!--recipe image-->
-  <h4 class="text-center">"{{ recipe.Description }}"</h4>
+  <h4 class="text-center">"{{ recipe.description }}"</h4>
   <div class="imgheight col-10 col-lg-6 col-md-7 d-flex flex-column mb-1">
     <img
-      [src]="recipe.ImageURl"
+      [src]="recipe.image"
       class="img-fluid w-100 h-100 object-fit-cover rounded-4"
     />
   </div>
-
   <!--Comments-->
 
   <div class="col-10 col-lg-6 col-md-7 d-flex flex-column mb-2 box">
     <div class="d-flex justify-content-around align-items-center">
-      <i
-        class="bi"
-        [class.bi-suit-heart]="!isFilled"
-        [class.bi-suit-heart-fill]="isFilled"
-        [style.color]="isFilled ? '#561c24' : '#561c24'"
-        (click)="toggleHeart()"
-      ></i>
+     
 
-      <button type="button" class="x rounded-3 col-5 col-lg-3 h-75">
+      <button
+        type="button"
+        class="x rounded-3 col-5 col-lg-3 h-75"
+        (click)="clicked = !clicked"
+      >
         Comments
       </button>
       <i
@@ -57,37 +54,48 @@
       ></i>
     </div>
   </div>
-
-  <!--recipe ingredients-->
-  <div class="col-10 col-lg-6 col-md-6">
-    <h3>Ingredients:</h3>
-    <ul class="ingredients-list ms-3">
-      <li *ngFor="let ingredient of recipe.Ingredients">
-        <label>
-          <input type="checkbox" />
-          <span>
-            {{ ingredient.Quantity }} {{ ingredient.Unit }} of
-            <strong>{{ ingredient.IngredientName }}</strong>
-          </span>
-        </label>
-      </li>
-    </ul>
-  </div>
-  <!--Info about recipe-->
-  <div
-    class="col-10 col-lg-6 col-md-6 d-flex flex-column justify-content-center"
-  >
-    <div class="d-flex">
-      <h3>Description:</h3>
-      <p class="ms-2 pt-1">{{ recipe.Instruction }} minutes</p>
-    </div>
-    <div class="d-flex align-items-center">
-      <h3>Preparation Time:</h3>
-      <p class="pt-3 ms-2">{{ recipe.PrepTime }} minutes</p>
-    </div>
-    <div class="d-flex align-items-center">
-      <h3>Cooking Time:</h3>
-      <p class="pt-3 ms-2">{{ recipe.CookingTime }} minutes</p>
+  <div *ngIf="clicked" class="col-10 col-lg-6 col-md-7 d-flex flex-column mb-2">
+    <div
+      *ngFor="let comment of recipe.comments"
+      class="commentContainer rounded-3 col-12 d-flex flex-column justify-content-center ps-3 mb-2"
+    >
+      <div class="d-flex justify-content-start align-items-center">
+        <p class="comment">{{ comment.userName }}</p>
+        <p class="commentDate ms-2 pt-1">({{ comment.createdAt | date }})</p>
+      </div>
+      <p class="commentBody">{{ comment.content }}</p>
     </div>
   </div>
+ <!--recipe ingredients-->
+ <div class="col-10 col-lg-6 col-md-6">
+  <h3>Ingredients:</h3>
+  <ul class="ingredients-list ms-3">
+    <li *ngFor="let ingredient of recipe.ingredients">
+      <label>
+        <input type="checkbox" />
+        <span>
+          {{ ingredient.quantity }} {{ ingredient.unit }} of
+          <strong>{{ ingredient.ingredientName }}</strong>
+        </span>
+      </label>
+    </li>
+  </ul>
+</div>
+<!--Info about recipe-->
+<div
+  class="col-10 col-lg-6 col-md-6 d-flex flex-column justify-content-center"
+>
+  <div class="d-flex">
+    <h3>Description:</h3>
+    <p class="ms-2 pt-1">{{ recipe.instructions }} minutes</p>
+  </div>
+  <div class="d-flex align-items-center">
+    <h3>Preparation Time:</h3>
+    <p class="pt-3 ms-2">{{ recipe.prepTime }} minutes</p>
+  </div>
+  <div class="d-flex align-items-center">
+    <h3>Cooking Time:</h3>
+    <p class="pt-3 ms-2">{{ recipe.cookingTime }} minutes</p>
+  </div>
+</div>
 </div>

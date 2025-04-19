@@ -16,7 +16,9 @@
   font-weight: 800;
   color: #561c24;
 }
-
+.profile{
+  font-family: "Dancing Script", cursive;
+}
 @media (max-width: 991px) {
   .full-width-navbar {
     width: 100% !important;

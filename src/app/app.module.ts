@@ -18,6 +18,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { ProfileDataEditingComponent } from './components/profile-data-editing/profile-data-editing.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +43,7 @@ import { ProfileDataEditingComponent } from './components/profile-data-editing/p
     ReactiveFormsModule,
     NgSelectModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

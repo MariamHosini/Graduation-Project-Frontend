@@ -9,6 +9,7 @@ import {
 import { Router } from '@angular/router';
 import { EmailService } from '../../services/email.service';
 import { IuserEmail } from '../../models/iuser-email';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -18,7 +19,7 @@ import { IuserEmail } from '../../models/iuser-email';
 })
 export class SignUpComponent {
   user: IuserEmail = {} as IuserEmail;
-  constructor(private _router: Router, private _userEmail: EmailService) {}
+  constructor(private _router: Router, private _userEmail: EmailService , private _auth : AuthService) {}
   SignUpForm = new FormGroup(
     {
       username: new FormControl('', [Validators.required]),
@@ -45,11 +46,24 @@ export class SignUpComponent {
   }
 
   SignUp() {
-    this.user.Email = this.SignUpForm.get('email')?.value ?? '';
-    this.user.UserName = this.SignUpForm.get('username')?.value ?? '';
-    this.user.Password = this.SignUpForm.get('password')?.value ?? '';
+    this.user.email = this.SignUpForm.get('email')?.value ?? '';
+    this.user.userName = this.SignUpForm.get('username')?.value ?? '';
+    this.user.password = this.SignUpForm.get('password')?.value ?? '';
+    const credentials = {userName : this.user.userName , password : this.user.password , email : this.user.email }
+    console.log(credentials);
+    this._auth.register(credentials).subscribe({
+      next: (res) => {
+        console.log(res);
+        if(res == "User created successfully")
+        {
+            this._router.navigateByUrl(`Login`);
+        }
+        else
+        {
 
+        }
+      } });
     this._userEmail.addUser(this.user);
-    this._router.navigateByUrl('home');
+    // this._router.navigateByUrl('home');
   }
 }

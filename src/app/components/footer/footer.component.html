@@ -13,7 +13,7 @@
             >
           </p>
           <p>
-            <a style="cursor: pointer" class="text-reset text">Blog</a>
+            <a style="cursor: pointer" class="text-reset text" routerLink="SignUp">Sign Up</a>
           </p>
           <p>
             <a
@@ -24,7 +24,7 @@
             >
           </p>
           <p>
-            <a style="cursor: pointer" class="text-reset text">Contact</a>
+            <a style="cursor: pointer" class="text-reset text" routerLink="startHere">Start Here</a>
           </p>
         </div>
       </div>
@@ -32,18 +32,18 @@
         <h6 class="text-uppercase fw-bold mb-4 color">Food & Recipes</h6>
         <div class="ms-3">
           <p>
-            <a style="cursor: pointer" class="text-reset text">Soup Recipes</a>
+            <a style="cursor: pointer" class="text-reset text" (click)="Clicked(2)">Soup Recipes</a>
           </p>
           <p>
-            <a style="cursor: pointer" class="text-reset text">Taco Recipes</a>
+            <a style="cursor: pointer" class="text-reset text" (click)="Clicked(3)">Taco Recipes</a>
           </p>
           <p>
-            <a style="cursor: pointer" class="text-reset text"
+            <a style="cursor: pointer" class="text-reset text" (click)="Clicked(4)"
               >Healthy Recipes</a
             >
           </p>
           <p>
-            <a style="cursor: pointer" class="text-reset text">Pasta Recipes</a>
+            <a style="cursor: pointer" class="text-reset text" (click)="Clicked(5)">Pasta Recipes</a>
           </p>
         </div>
       </div>
@@ -55,10 +55,10 @@
         <h5>You Can Login in our Website</h5>
       </div>
       <div class="d-flex justify-content-center col-11">
-        <form class="col-12 d-flex justify-content-around">
-          <input type="email" placeholder="E-mail" class="col-4" />
-          <input type="password" placeholder="Password" class="col-4" />
-          <button class="btn col-lg-2 text-align-center">OK</button>
+        <form class="col-12 d-flex justify-content-around" [formGroup]="LoginForm" (ngSubmit)="sign()">
+          <input type="email"  formControlName="email" placeholder="User Name" class="col-4" />
+          <input type="password" formControlName="password" placeholder="Password" class="col-4" />
+          <button class="btn col-lg-2 text-align-center">Sign In</button>
         </form>
       </div>
     </div>

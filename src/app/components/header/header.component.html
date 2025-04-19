@@ -67,12 +67,35 @@
             </li>
             <li class="nav-item _bo">
               <a
+              *ngIf="isloged == false"
                 class="nav-link navItem"
                 routerLink="/Login"
                 data-bs-toggle="collapse"
                 data-bs-target=".navbar-collapse.show"
                 >LOGIN</a
               >
+              <a
+              routerLink="home"
+              *ngIf="isloged == true"
+              style="cursor: pointer;"
+              class="nav-link navItem"
+              (click)="logout()"
+              data-bs-toggle="collapse"
+              data-bs-target=".navbar-collapse.show"
+              >LOGOUT</a
+            >
+            </li>
+            <li class="nav-item _bo">
+              <a
+              
+              *ngIf="isloged == true"
+              style="cursor: pointer;"
+              class="nav-link navItem profile"
+              (click)="GoToProfile()"
+              data-bs-toggle="collapse"
+              data-bs-target=".navbar-collapse.show"
+              >My Profile</a
+            >
             </li>
           </ul>
         </div>

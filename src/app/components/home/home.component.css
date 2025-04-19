@@ -1,0 +1,408 @@
+/* first cards section */
+.ground {
+  background-color: rgba(238, 233, 233);
+}
+.recipe-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.recipe-card {
+  position: relative;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.recipe-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 410px;
+  background-color: rgba(238, 233, 233, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.category-label::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(238, 233, 233, 0.3);
+  transition: opacity 0.3s ease;
+
+  opacity: 0;
+}
+
+.category-label {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #6d2932;
+  color: white;
+  font-weight: bold;
+  padding: 8px 20px;
+  border-radius: 2px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  z-index: 1;
+}
+
+/* Hover effects */
+.recipe-card:hover::after {
+  opacity: 1;
+}
+.category-label:hover::after {
+  opacity: 1;
+}
+
+.changes {
+  list-style: none;
+  display: inline-block;
+  margin-left: 20px;
+}
+.labelchanges:hover {
+  opacity: 70%;
+}
+.post-footer {
+  background-image: url(../../../assets/pizzaaa.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 70vh;
+  padding: 30px 15px 50px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.post-footer h2 {
+  font-family: "Dancing Script", cursive;
+  color: #561c24;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 8vw, 4.5rem); /* Responsive font size */
+  margin-bottom: 1.5rem !important;
+}
+
+.left {
+  background-color: rgba(232, 216, 193, 0.85);
+  min-height: 200px;
+  height: auto;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+}
+
+.text {
+  padding: 15px;
+  width: 100%;
+}
+
+.quote {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #561c24;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.signature {
+  font-family: "Dancing Script", cursive;
+  font-weight: 600;
+  color: #561c24;
+  text-align: center;
+  font-size: clamp(1.25rem, 5vw, 1.75rem);
+  margin-bottom: 0;
+}
+.last-recipes h2 {
+  font-family: "Dancing Script", cursive;
+  color: #561c24;
+  font-weight: 600;
+}
+.icon {
+  color: #6d2932;
+}
+.icon:hover {
+  transition: color 0.3s ease, transform 0.3s ease;
+  color: #ac3746;
+}
+
+h4 {
+  color: #6d2932;
+  font-size: 35px;
+  font-family: "Dancing Script", cursive;
+}
+.last-recipes .card {
+  height: auto; /* Changed from fixed height */
+  margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .last-recipes .card {
+    height: 270px;
+  }
+}
+
+.last-recipes img {
+  transition: 0.3s;
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .last-recipes img {
+    height: 270px;
+  }
+}
+
+.last-recipes img:hover {
+  opacity: 70% !important;
+}
+
+.last-recipes .card .heading {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #561c24;
+  font-size: 1.5rem; /* 24px */
+  font-weight: 500;
+  margin-top: 1rem;
+}
+/* Base slider styles */
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-image {
+  height: 70vh; /* Changed to viewport height for better responsiveness */
+  min-height: 250px; /* Minimum height */
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.back {
+  background-image: url(../../../assets/last3.jpg);
+}
+
+.back3 {
+  background-image: url(../../../assets/about\ strowbarry\ moth2.jpg);
+}
+
+/* Overlay content styles */
+.card-img-overlay {
+  display: flex;
+  padding: 0rem !important;
+  justify-content: flex-start; /* Changed to flex-start for left alignment */
+  align-items: center;
+}
+
+.slide-content {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0;
+}
+
+.slider-heading {
+  color: #6d2932;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.slider-text {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgb(0, 0, 0);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  font-weight: 500;
+}
+
+.shafafa {
+  background-color: rgba(232, 216, 193, 0.7);
+  width: clamp(300px, 40vw, 500px); /* Responsive width with limits */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  padding: clamp(15px, 2vw, 15px);
+}
+
+.slider-btn {
+  font-family: "Dancing Script", cursive;
+  background-color: #e8d8c4;
+  color: #6d2932;
+  border: 2px solid #6d2932;
+  border-radius: 15px;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  transition: all 0.3s ease;
+  min-width: 180px;
+  width: 100%;
+  max-width: 200px;
+}
+
+.slider-btn:hover {
+  color: #e8d8c4;
+  background-color: #6d2932;
+  border-color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .shafafa {
+    width: 50vw;
+    margin-left: 2%;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-image {
+    height: 60vh;
+  }
+
+  .card-img-overlay {
+    padding: 1.5rem;
+    justify-content: center !important;
+  }
+
+  .shafafa {
+    width: 70vw;
+    margin: 0 auto;
+  }
+
+  .slider-btn {
+    padding: 0.6rem 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .slider-image {
+    height: 50vh;
+    min-height: 200px;
+  }
+
+  .shafafa {
+    width: 85vw;
+    padding: 15px;
+  }
+
+  .slider-heading {
+    font-size: 1.75rem;
+  }
+
+  .slider-text {
+    font-size: 1rem;
+  }
+
+  .slider-btn {
+    min-width: 150px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .shafafa {
+    width: 90vw;
+  }
+
+  .slider-heading {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .last-recipes .card .heading {
+    font-size: 1.875rem; /* 30px */
+    margin-top: 0;
+  }
+}
+
+.heading:hover {
+  text-decoration: underline !important;
+}
+
+.last-recipes .card p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem; /* 16px */
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .last-recipes .card p {
+    font-size: 1.0625rem; /* 17px */
+  }
+}
+
+.last-recipes .card .cont {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #561c24;
+  font-weight: 700;
+  font-size: 1.125rem; /* 18px */
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .last-recipes .card .cont {
+    font-size: 1.25rem; /* 20px */
+    margin-top: 1.5rem;
+  }
+}
+
+.last-recipes .card .cont:hover {
+  color: #8b2e3c !important;
+}
+
+hr {
+  width: 85%;
+  margin: 0 auto;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 767.98px) {
+  .last-recipes .card-body {
+    padding: 1.25rem;
+  }
+
+  .last-recipes .rounded-start {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .post-footer {
+    padding-top: 30px;
+    min-height: 60vh;
+  }
+
+  .left {
+    padding: 20px 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .quote {
+    font-size: 1.1rem;
+  }
+
+  .signature {
+    font-size: 1.3rem;
+  }
+}

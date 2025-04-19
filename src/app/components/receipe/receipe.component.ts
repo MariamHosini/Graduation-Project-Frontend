@@ -4,7 +4,10 @@ import { IRecipeDetails } from '../../models/irecipe-details';
 import { ICategory } from '../../models/icategory';
 import { CategoriesService } from '../../services/categories.service';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { APIRecipeService } from '../../services/apirecipe.service';
+import { HttpClient } from '@angular/common/http';
+import { APICategoriesService } from '../../services/api-categories.service';
+import { forkJoin } from 'rxjs/internal/observable/forkJoin';
 @Component({
   selector: 'app-receipe',
   standalone: false,
@@ -16,44 +19,69 @@ export class ReceipeComponent implements OnInit {
   selectedOptions: any[] = [];
   topRated: IRecipeDetails[] = [] as IRecipeDetails[];
   Popularcategories: ICategory[] = [] as ICategory[];
-  MealTypecategories: ICategory[] = [] as ICategory[];
-  Coursecategories: ICategory[] = [] as ICategory[];
+
 
   constructor(
-    private _TopRatedService: TopRatedService,
+    private _apiRecipe: APIRecipeService,
     private _Categories: CategoriesService,
-    private _router: Router
-  ) // private _apiCategories: APICategoriesService,
-  // private _apiRecipes: APIRecipeService
-
+    private _router: Router,
+    private _httpClient: HttpClient,
+   private _apiCategories: APICategoriesService,
+ 
+  )
   {}
   ngOnInit() {
-    this.topRated = this._TopRatedService.mockRecipes;
-    this.Popularcategories = this._Categories.getByGroup('Popular');
-    this.MealTypecategories = this._Categories.getByGroup('MealType');
-    this.Coursecategories = this._Categories.getByGroup('Course');
+    this.loadAllRecipes();
+    
 
-    // forkJoin([
-    //   this._apiCategories.GetAllCategories(),
-    //   this._apiRecipes.GetAllRecipes(),
-    // ]).subscribe(([data1, data2]: [any[], any[]]) => {
-    //   this.selectedOptions = [
-    //     { id: 0, displayName: 'All', description: '' },
-    //     ...[...data1, ...data2].map((item) => ({
-    //       id: item.RecipeID || item.CategoryID,
-    //       displayName: item.Name || item.Title,
-    //     })),
-    //   ];
-    // });
+    this._apiCategories.GetAllCategoriesV2().subscribe({
+      next:(res)=>this.Popularcategories=res
+    });
+    this._apiCategories.GetAllCategories().subscribe((categories: any[]) => {
+      this.selectedOptions = [
+        { id: 0, displayName: 'All', description: '' },
+        ...categories.map((category) => ({
+          id: category.categoryID,
+          displayName: category.name,
+        })),
+      ];
+      console.log(this.selectedOptions);
+    });
+  } 
+
+
+  onCategorySelected(categoryId: number) {
+    if (categoryId === 0) {
+      this.loadAllRecipes();
+    } else {
+      this._apiRecipe.GetRecipeByCat(categoryId).subscribe((recipes) => {
+        this.topRated = recipes;
+        console.log('Recipes for selected category:', recipes);
+      });
+    }
   }
-
   getRecipe(receipeId: number) {
+    console.log(receipeId);
     this._router.navigateByUrl(`oneRecipeShow/${receipeId}`);
   }
   getRecipesCat(catId: number) {
-    this._router.navigateByUrl('home');
+    this._router.navigateByUrl(`recipesShow/${catId}`);
   }
   getAllRecipes(recipes: string) {
     this._router.navigateByUrl(`recipesShow/${recipes}`);
   }
-}
+
+  loadAllRecipes() {
+    this._apiRecipe.GetTopRatedRecipes().subscribe({
+      next: (response) => {
+        this.topRated = response;
+        console.dir(this.topRated); // Log the array directly since response is IRecipeDetails[]
+       
+      },
+      error: (err) => {
+        console.error('Error fetching top-rated recipes:', err);
+        // You can also show a message to the user here
+      }
+    });
+   
+  }}

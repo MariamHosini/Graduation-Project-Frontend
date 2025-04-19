@@ -20,10 +20,11 @@
         <ng-select
           class="custom-ng-select"
           [items]="selectedOptions"
-          bindLabel="id"
-          bindValue="displayName"
-          placeholder="Search by keyword"
+          bindValue="id"
+          bindLabel="displayName"
+          placeholder="Search by Category"
           [(ngModel)]="selectedCategory"
+          (ngModelChange)="onCategorySelected($event)"
           [searchable]="true"
         >
         </ng-select>
@@ -56,9 +57,9 @@
       *ngFor="let recipe of topRated"
     >
       <div class="col-lg-5 col-md-4 col-6 imgH">
-        <a (click)="getRecipe(recipe.RecipeID)" style="cursor: pointer">
+        <a (click)="getRecipe(recipe.recipeID)" style="cursor: pointer">
           <img
-            [src]="recipe.ImageURl"
+            [src]="recipe.image"
             class="img-fluid w-100 h-100 object-fit-cover"
           />
         </a>
@@ -67,11 +68,11 @@
       <div
         class="col-lg-6 col-md-7 col-5 imgH d-flex flex-column justify-content-start align-items-start"
       >
-        <a (click)="getRecipe(recipe.RecipeID)" style="cursor: pointer"
-          ><h5>{{ recipe.Title }}</h5></a
+        <a (click)="getRecipe(recipe.recipeID)" style="cursor: pointer"
+          ><h5>{{ recipe.title }}</h5></a
         >
-        <app-star-rating [rating]="recipe.Ratings.score"></app-star-rating>
-        <div class="avg">{{ recipe.Ratings.score }} Average</div>
+        <app-star-rating [rating]="recipe.avgRating"></app-star-rating>
+        <div class="avg">{{ recipe.avgRating }} </div>
       </div>
     </div>
   </div>
@@ -97,34 +98,13 @@
         *ngFor="let item of Popularcategories"
         class="col-lg-4 col-md-4 col-6"
       >
-        <a style="cursor: pointer" class="cat" (click)="getRecipesCat(item.Id)"
-          ><li class="col-12">{{ item.Name }}</li></a
+        <a style="cursor: pointer" class="cat" (click)="getRecipesCat(item.id)"
+          ><li class="col-12">{{ item.name }}</li></a
         >
       </ul>
     </div>
   </div>
 
-  <div class="col-9 d-flex justify-content-start flex-column mb-3">
-    <h3 class="col-12 pb-2 catTitle">MEALTYPE CATEGORIES</h3>
-    <div class="col-12 d-flex justify-content-between flex-wrap">
-      <ul
-        *ngFor="let item of MealTypecategories"
-        class="col-lg-4 col-md-4 col-6"
-      >
-        <a style="cursor: pointer" class="cat" (click)="getRecipesCat(item.Id)"
-          ><li class="col-12" [value]="item.Id">{{ item.Name }}</li></a
-        >
-      </ul>
-    </div>
-  </div>
-  <div class="col-9 d-flex justify-content-start flex-column mb-3">
-    <h3 class="col-12 pb-2 catTitle">COURSE CATEGORIES</h3>
-    <div class="col-12 d-flex justify-content-between flex-wrap">
-      <ul *ngFor="let item of Coursecategories" class="col-lg-4 col-md-4 col-6">
-        <a style="cursor: pointer" class="cat" (click)="getRecipesCat(item.Id)"
-          ><li class="col-12" [value]="item.Id">{{ item.Name }}</li></a
-        >
-      </ul>
-    </div>
-  </div>
+  
+ 
 </div>

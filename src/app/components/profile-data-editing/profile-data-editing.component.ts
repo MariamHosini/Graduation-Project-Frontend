@@ -10,6 +10,9 @@ import {
 } from '@angular/forms';
 import { flush } from '@angular/core/testing';
 import { Location } from '@angular/common';
+import { IAuthor } from '../../models/iauthor';
+import { IuserData } from '../../models/iuser-data';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-profile-data-editing',
@@ -19,74 +22,65 @@ import { Location } from '@angular/common';
 })
 export class ProfileDataEditingComponent implements OnInit {
   editName: boolean = false;
-  editPassword: boolean = false;
-  editImage: boolean = false;
+  userid:number=0;
 
-  user: IuserEmail = {} as IuserEmail;
+  editImage: boolean = false;
+  user: IuserData = {} as IuserData;
   constructor(
     private _activateRoute: ActivatedRoute,
     private _email: EmailService,
-    private _location: Location
+    private _location: Location,
+    private _auth:AuthService
   ) {}
   ImageForm = new FormGroup(
     {
       image: new FormControl(''),
     },
-    this.passwordsMatchValidator
+  
   );
   EditForm = new FormGroup(
     {
       username: new FormControl('', [Validators.required]),
 
-      password: new FormControl('', [
-        Validators.required,
-        Validators.minLength(6),
-      ]),
-      confirmPassword: new FormControl('', [Validators.required]),
+    
     },
-    this.passwordsMatchValidator
+   
   );
-  passwordsMatchValidator(
-    form: AbstractControl
-  ): { [key: string]: any } | null {
-    const password = form.get('password')?.value;
-    const confirmPassword = form.get('confirmPassword')?.value;
-    return password === confirmPassword ? null : { passwordMismatch: true };
-  }
-
+ 
   ngOnInit(): void {
-    this.user.Email =
-      this._activateRoute.snapshot.paramMap.get('UserEmail') ?? '';
+    this.userid =
+     Number( this._activateRoute.snapshot.paramMap.get('UserId')) ?? 0;
+     this._auth.getUserData(this.userid).subscribe({
+      next:(res)=>{
+        this.user=res;
+        this.user.profileImageUrl="assets/blank-profile-picture-973460_640.webp"
+      }
+     });
 
-    this.user =
-      this._email.Users.find((us) => us.Email === this.user.Email) ??
-      ({} as IuserEmail);
+   
   }
 
   Edit() {
-    if (this.editName && !this.editPassword) {
-      this.user.UserName = this.EditForm.controls.username.value ?? '';
+    if (this.editName ) {
+      this.user.userName = this.EditForm.controls.username.value ?? '';
       this.editName = false;
-    } else if (this.editPassword && !this.editName) {
-      this.user.Password = this.EditForm.controls.password.value ?? '';
-      this.editPassword = false;
-    } else {
-      this.user.UserName = this.EditForm.controls.username.value ?? '';
-      this.user.Password = this.EditForm.controls.password.value ?? '';
-      this.editPassword = false;
+    }else {
+      this.user.userName = this.EditForm.controls.username.value ?? '';
+     
+    
       this.editName = false;
     }
 
     this.EditForm.reset();
   }
   SavingImage() {
-    this.user.UserImage = this.ImageForm.controls.image.value ?? '';
+    this.user.profileImageUrl = this.ImageForm.controls.image.value ?? '';
 
     this.editImage = false;
     this.ImageForm.reset();
   }
   ClearImage() {
-    this.user.UserImage = 'assets/blank-profile-picture-973460_640.webp';
+    this.user.profileImageUrl = 'assets/blank-profile-picture-973460_640.webp';
     this.editImage = false;
   }
   goBack() {
